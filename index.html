@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="akvarie skærm"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>akvarie</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Baggrund -->
+    <section class="scene">
+      <img src="img/animeret-baggrund.gif" alt="hav" class="bg" />
+      <div class="sun"></div>
+
+      <!-- BOBLER -->
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+
+      <!-- Fisk animeret container -->
+      <div class="fisk-container">
+        <img
+          src="img/klovnfisk.png"
+          alt="klovnfisk"
+          class="fish1"
+          id="klovnfisk"
+        />
+
+        <img
+          src="img/sandspiser.png"
+          alt="sandspiser"
+          class="fish2"
+          id="sandspiser"
+        />
+        <img
+          src="img/raevefisk.png"
+          alt="rævefisk"
+          class="fish3"
+          id="raevefisk"
+        />
+        <img
+          src="img/pindsvinefisk.png"
+          alt="pindsvinefisk"
+          class="fish4"
+          id="pindsvinfisk"
+        />
+        <img
+          src="img/pudsefisk.png"
+          alt="pudsefisk"
+          class="fish5"
+          id="pudsefisk"
+        />
+        <img
+          src="img/kirugfisk.png"
+          alt="kirugfisk"
+          class="fish6"
+          id="kirugfisk"
+        />
+        <img
+          src="img/blue-chromis.png"
+          alt="fisk1"
+          class="fish7"
+          id="blue-chromisfisk"
+        />
+      </div>
+      <!-- Akvariemanden container -->
+      <div class="akvariemanden">
+        <figure class="akvariemanden-closed-mouth">
+          <img
+            src="img/akvariemanden-lukket-mund.png"
+            alt="akvariemanden med lukket mund"
+            id="akvariemanden-closed-mouth"
+          />
+        </figure>
+      </div>
+
+      <!-- Akvariemanden tekstbokse -->
+      <div class="akvariemand-start-tekstboks">
+        <p id="start-tekstboks">Klik på mig!</p>
+      </div>
+      <div class="akvariemand-slut-tekstboks">
+        <p id="slut-tekstboks">
+          Hej med jer! <br />
+          Velkommen til akvariet i Storcenter Nord. <br />
+          Her i akvariet kan i finde mine venner der svømmer rundt bag mig. Du
+          kan klikke på mine fiske-venner for at lære mere om dem. <br />
+          Kan du for eksempel finde min orange klovnfiske-ven?
+        </p>
+      </div>
+      <div id="tooltip" class="tooltip">
+        <button class="close-btn">Luk</button>
+        <div class="tooltip-content"></div>
+      </div>
+
+      <!-- Fisk til informationsskærm container -->
+      <div class="info-fish">
+        <img src="img/klovnfisk.png" alt="klovnfisk" id="klovnfisk-info" />
+        <img src="img/sandspiser.png" alt="sandspiser" id="sandspiser-info" />
+        <img src="img/raevefisk.png" alt="rævefisk" id="raevefisk-info" />
+        <img src="img/pindsvinefisk.png" alt="gobifisk" id="pindsvinefisk-info" />
+        <img src="img/pudsefisk.png" alt="pudsefisk" id="pudsefisk-info" />
+        <img src="img/kirugfisk.png" alt="kirugfisk" id="kirurgfisk-info" />
+        <img src="img/blue-chromis.png" alt="fisk1" id="blue-chromis-info" />
+      </div>
+    </section>
+
+    <audio src="audio/underwater-loop.mp3" loop id="underwater-sound"></audio>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

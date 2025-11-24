@@ -1,0 +1,517 @@
+/* Variabler */
+:root {
+  --fish-small-w: 13vw;
+  --fish-big-w: 20vw;
+  --font: andika;
+}
+
+/* Reset style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Baggrund og body */
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Fisk container */
+.fisk-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Fælles stil for alle fisk */
+.fisk-container div img {
+  position: absolute;
+  height: auto;
+  display: block;
+  z-index: 3;
+}
+
+/* Animation til klovnfisk */
+.fish1 {
+  bottom: 50vh;
+  width: var(--fish-small-w);
+  left: calc(-1 * var(--fish-small-w));
+  animation: fish1 12s linear infinite;
+  animation-delay: 0s;
+  z-index: 2;
+}
+@keyframes fish1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + var(--fish-small-w)));
+  }
+}
+
+/* Animation til sandspiser-gobi */
+.fish2 {
+  position: absolute;
+  bottom: 50vh;
+  width: var(--fish-small-w);
+  right: calc(-1 * var(--fish-small-w));
+  animation: fish2 9s linear infinite;
+  animation-delay: 2s;
+  will-change: transform;
+  rotate: 5deg;
+  z-index: 3;
+}
+@keyframes fish2 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(-100vw - var(--fish-small-w))) rotateY(180deg);
+  }
+}
+
+/* Animation til rævefisken */
+.fish3 {
+  position: absolute;
+  bottom: 10vh;
+  width: var(--fish-big-w);
+  left: calc(-1 * var(--fish-big-w));
+  animation: fish3 8s linear infinite;
+  animation-delay: 4s;
+  rotate: -5deg;
+  z-index: 1;
+}
+@keyframes fish3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + var(--fish-big-w)));
+  }
+}
+
+/* Animation til pindsvinefisken */
+.fish4 {
+  position: absolute;
+  bottom: 65vh;
+  width: var(--fish-big-w);
+  right: calc(-1 * var(--fish-big-w));
+  animation: fish4 16s linear infinite;
+  animation-delay: 6s;
+  will-change: transform;
+  z-index: 3;
+}
+@keyframes fish4 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(-100vw - var(--fish-big-w))) rotateY(180deg);
+  }
+}
+
+/* Animation til pudsefisken */
+.fish5 {
+  position: absolute;
+  bottom: 20vh;
+  width: var(--fish-small-w);
+  left: calc(-1 * var(--fish-small-w));
+  animation: fish5 10s linear infinite;
+  animation-delay: 8s;
+  z-index: 1;
+}
+@keyframes fish5 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + var(--fish-small-w)));
+  }
+}
+
+/* Animation til kirurgfisken */
+.fish6 {
+  position: absolute;
+  bottom: 20vh;
+  width: var(--fish-big-w);
+  right: calc(-1 * var(--fish-big-w));
+  animation: fish6 8s linear infinite;
+  animation-delay: 4s;
+  will-change: transform;
+  rotate: 10deg;
+  z-index: 3;
+}
+@keyframes fish6 {
+  0% {
+    transform: translateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(-100vw - var(--fish-big-w))) rotateY(180deg);
+  }
+}
+
+/* Animation til blå chromis */
+.fish7 {
+  position: absolute;
+  bottom: 30vh;
+  left: calc(-1 * var(--fish-small-w));
+  width: var(--fish-small-w);
+  animation: fish7 7s linear infinite;
+  animation-delay: 4s;
+  z-index: 1;
+}
+@keyframes fish7 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + var(--fish-small-w)));
+  }
+}
+
+/* Akvariemanden */
+.akvariemanden img {
+  bottom: -1vh;
+  max-width: 65vh;
+  position: absolute;
+}
+
+.akvariemanden-closed-mouth img {
+  z-index: 10;
+}
+
+/* Akvariemandens tekstbokse */
+
+.akvariemand-start-tekstboks {
+  border: 1.5px solid rgb(211, 83, 15);
+  background-color: rgb(245, 203, 32);
+  max-width: fit-content;
+  padding: 2vh;
+  border-radius: 1rem;
+  position: absolute;
+  top: 90vh;
+  z-index: 12;
+  left: 5.4vw;
+  font-family: var(--font);
+  animation: pulse 2.5s infinite;
+}
+
+.akvariemand-slut-tekstboks {
+  background-color: white;
+  max-width: fit-content;
+  padding: 2vh;
+  border-radius: 1rem;
+  border: 1.5px solid black;
+  top: 76.5vh;
+  position: absolute;
+  z-index: 13;
+  left: 20vw;
+  font-family: var(--font);
+  opacity: 0;
+}
+
+/* Laver en klasse der gør "klik på mig" knappen usynlig */
+.akvariemand-start-tekstboks.is-not-visible {
+  opacity: 0;
+}
+
+/* Animation til "klik på mig" knappen */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Laver en klasse der gør akvariemandens slut tekstboks synlig */
+.akvariemand-slut-tekstboks.is-visible {
+  opacity: 1;
+}
+.bubbles {
+  position: fixed; /* dækker hele viewport */
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 2;
+  padding-inline: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -8vh;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(133, 220, 249, 0.65) 20%,
+    rgba(85, 140, 186, 0.12) 90px
+  );
+  opacity: 0;
+  transform: translateY(0) translateX(0) scale(1);
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+  width: clamp(8px, 3.5vw, 48px);
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(0.9);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(20px) scale(1.03);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120vh) translateX(-20px) scale(1.15);
+  }
+}
+
+.bubble:nth-child(1) {
+  left: 3%;
+  width: clamp(6px, 2.5vw, 36px);
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+.bubble:nth-child(2) {
+  left: 8%;
+  width: clamp(8px, 3vw, 40px);
+  animation-duration: 8.5s;
+  animation-delay: 1s;
+}
+.bubble:nth-child(3) {
+  left: 12%;
+  width: clamp(5px, 2vw, 28px);
+  animation-duration: 5.8s;
+  animation-delay: 0.4s;
+}
+.bubble:nth-child(4) {
+  left: 17%;
+  width: clamp(10px, 3.8vw, 48px);
+  animation-duration: 11s;
+  animation-delay: 2.2s;
+}
+.bubble:nth-child(5) {
+  right: 23%;
+  width: clamp(7px, 3vw, 36px);
+  animation-duration: 7.5s;
+  animation-delay: 1s;
+}
+.bubble:nth-child(6) {
+  left: 29%;
+  width: clamp(12px, 4.2vw, 48px);
+  animation-duration: 12.5s;
+  animation-delay: 3s;
+}
+.bubble:nth-child(7) {
+  right: 34%;
+  width: clamp(6px, 2.2vw, 28px);
+  animation-duration: 8.2s;
+  animation-delay: 0.3s;
+}
+.bubble:nth-child(8) {
+  left: 39%;
+  width: clamp(9px, 3.6vw, 40px);
+  animation-duration: 9.5s;
+  animation-delay: 1.8s;
+}
+.bubble:nth-child(9) {
+  left: 45%;
+  width: clamp(6px, 2.4vw, 32px);
+  animation-duration: 6.4s;
+  animation-delay: 0.6s;
+}
+.bubble:nth-child(10) {
+  right: 51%;
+  width: clamp(11px, 4vw, 48px);
+  animation-duration: 13s;
+  animation-delay: 2.6s;
+}
+.bubble:nth-child(11) {
+  left: 57%;
+  width: clamp(7px, 3vw, 36px);
+  animation-duration: 7.2s;
+  animation-delay: 1.1s;
+}
+.bubble:nth-child(12) {
+  left: 63%;
+  width: clamp(5px, 2vw, 28px);
+  animation-duration: 5.6s;
+  animation-delay: 0.2s;
+}
+.bubble:nth-child(13) {
+  left: 68%;
+  width: clamp(14px, 4.5vw, 56px);
+  animation-duration: 14s;
+  animation-delay: 3.4s;
+}
+.bubble:nth-child(14) {
+  left: 74%;
+  width: clamp(8px, 3.2vw, 40px);
+  animation-duration: 8.8s;
+  animation-delay: 0.9s;
+}
+.bubble:nth-child(15) {
+  left: 80%;
+  width: clamp(6px, 2.6vw, 32px);
+  animation-duration: 6.9s;
+  animation-delay: 0.5s;
+}
+.bubble:nth-child(16) {
+  left: 86%;
+  width: clamp(10px, 3.8vw, 48px);
+  animation-duration: 10.5s;
+  animation-delay: 2s;
+}
+.bubble:nth-child(17) {
+  left: 92%;
+  width: clamp(7px, 3vw, 36px);
+  animation-duration: 9.8s;
+  animation-delay: 1.3s;
+}
+.bubble:nth-child(18) {
+  left: 96%;
+  width: clamp(9px, 3.6vw, 40px);
+  animation-duration: 11.8s;
+  animation-delay: 2.8s;
+}
+
+/* anne-sofie har lavet css til tooltip */
+.tooltip {
+  position: fixed;
+  top: 42%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background-image: url("../img/tekstbobbel.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 500px;
+  height: 400px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 60px;
+  text-align: center;
+}
+
+.tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-content {
+  color: #333;
+  font-weight: bold;
+  font-family: var(--font);
+}
+
+.tooltip-content h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: black;
+}
+
+.tooltip-content p {
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 14px;
+  color: #444;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1.5px solid rgb(211, 83, 15);
+  background-color: rgb(245, 203, 32);
+  padding: 1vh;
+  border-radius: 0.5rem;  
+}
+
+
+
+/* Styling til de fisk der dukker op når man klikker på dem */
+.info-fish img {
+  width: 25vw;
+  position: absolute;
+  top: 70vh;
+  left: 30vw;
+  z-index: 11;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#sandspiser-info {
+ top: 51vh;
+}
+
+
+#raevefisk-info {
+  width: 30vw;
+  left: 28vw;
+}
+
+
+#pindsvinefisk-info {
+  top: 57vh;
+}
+
+
+#kirurgfisk-info {
+  rotate: -10deg;
+  top: 65vh;
+}
+
+
+#blue-chromis-info {
+  top: 65vh;
+}
