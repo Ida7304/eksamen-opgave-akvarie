@@ -1,6 +1,7 @@
 /* Variabler */
 :root {
   --fish-small-w: 13vw;
+  --fish-medium-w: 16vw;
   --fish-big-w: 20vw;
   --font: andika;
 }
@@ -59,7 +60,7 @@ body {
 /* Animation til klovnfisk */
 .fish1 {
   bottom: 50vh;
-  width: var(--fish-small-w);
+  width: var(--fish-medium-w);
   left: calc(-1 * var(--fish-small-w));
   animation: fish1 12s linear infinite;
   animation-delay: 0s;
@@ -489,6 +490,14 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
+
+#klovnfisk-info {
+  top: 30vh;
+  width: 33vw;
+  left: 25vw;
+}
+
 
 #sandspiser-info {
  top: 51vh;
