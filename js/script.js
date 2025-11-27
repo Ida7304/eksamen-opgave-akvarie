@@ -19,7 +19,7 @@ akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
 // Afspiller snakke animation og lyd til akvariemanden når man klikker på ham
 if (akvarieMandenClosedImg) {
   akvarieMandenClosedImg.addEventListener("click", () => {
-    akvarieMandenClosedImg.src = "video/akvariemanden-gif.gif";
+    akvarieMandenClosedImg.src = "video/akvariemand-talking.gif";
     akvarieMandenSound.play();
 
     // Gør "klik på mig" knappen usynlig mens han snakker
@@ -30,7 +30,7 @@ if (akvarieMandenClosedImg) {
 
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
-      akvarieMandenClosedImg.src = "img/akvariemanden-lukket-mund.png";
+      akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
       // Gør "klik på mig" knappen synlig når han er færdig med at snakke
       klikMigBtn.classList.remove("is-not-visible");
 
@@ -45,7 +45,7 @@ if (akvarieMandenClosedImg) {
 
 if (klikMigBtn) {
   klikMigBtn.addEventListener("click", () => {
-    akvarieMandenClosedImg.src = "video/akvariemanden-gif.gif";
+    akvarieMandenClosedImg.src = "video/akvariemand-talking.gif";
     akvarieMandenSound.play();
 
     // Gør "klik på mig" knappen usynlig mens han snakker
@@ -56,7 +56,7 @@ if (klikMigBtn) {
 
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
-      akvarieMandenClosedImg.src = "img/akvariemanden-lukket-mund.png";
+      akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
       // Gør "klik på mig" knappen synlig når han er færdig med at snakke
       klikMigBtn.classList.remove("is-not-visible");
 
