@@ -1,4 +1,5 @@
 "use strict";
+document.addEventListener("DOMContentLoaded", () => {
 // Variabler
 const akvarieMandenClosedImg = document.getElementById(
   "akvariemanden-closed-mouth"
@@ -65,7 +66,7 @@ if (klikMigBtn) {
     }, 16000);
   });
 }
-document.addEventListener("DOMContentLoaded", () => {
+
   const bubblesContainer = document.querySelector(".bubbles");
   for (let i = 0; i < 18; i++) {
     const bubble = document.createElement("div");
@@ -80,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     bubble.style.bottom = `${randomBottom}vh`; // Sæt bundt position i vh
 
     bubblesContainer.appendChild(bubble);
-  }
-});
+  };
+
 
 /* anne-sofie har lavet javascript til tooltip */
 
@@ -159,7 +160,7 @@ const fishInfo = [
   },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
+
   const tooltip = document.getElementById("tooltip");
   const tooltipContent = document.querySelector(".tooltip-content");
   const closeBtn = document.querySelector(".close-btn");
@@ -235,7 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
 
 
 // Skrue ned for baggrundslyden
@@ -249,3 +249,4 @@ const startBgAudio = () => {
 
 // Starter baggrundslyden når man klikker et vilkårligt sted på skærmen
 document.addEventListener("click", startBgAudio);
+});
