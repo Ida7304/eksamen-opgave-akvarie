@@ -537,14 +537,14 @@ body {
 
 
 #klovnfisk-info {
-  top: 30vh;
+  top: 55vh;
   width: 33vw;
   left: 25vw;
 }
 
 
 #sandspiser-info {
- top: 32vh;
+ top: 43vh;
  width: 30vw;
  left: 27vw;
 }
@@ -553,34 +553,32 @@ body {
 #raevefisk-info {
   width: 33vw;
   left: 25vw;
-  top: 33vh;
+  top: 55vh;
 }
 
 
-
-
 #pindsvinefisk-info {
-  top: 2vh;
+  top: 45vh;
   width: 35vw;
   left: 22vw;
 }
 
 
 #kirurgfisk-info {
-  top: 27vh;
+  top: 50vh;
   width: 40vw;
-  left: 22vw;
+  left: 18vw;
 }
 
 
 #blue-chromis-info {
-  top: 35vh;
+  top: 60vh;
   width: 30vw;
   left: 25vw;
 }
 
 #pudsefisk-info {
-  top: 35vh;
+  top: 60vh;
   width: 30vw;
   left: 27vw;
 }

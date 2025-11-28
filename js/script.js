@@ -78,7 +78,8 @@ if (klikMigBtn) {
     // Gør akvariemandens taleboks synlig mens han snakker
     akvariemandTaleBoks.classList.add("is-visible");
 
-
+      lukBtnAm.classList.add("visible");
+      
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
