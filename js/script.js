@@ -96,9 +96,8 @@ const fishInfo = [
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc: "audio/klovnfisk-speech-1.mp3",
     info1:
-      "Hej! Jeg hedder Klovnfisk, og jeg bor i de varme koralhave omkring Australien og Indonesien. Jeg elsker at gemme mig i min søanemone, som beskytter mig med sine giftige arme, men den stikker ikke mig, for vi er bedste venner!",
-    info2:
-      "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem. Jeg ser måske sjov ud, men jeg er faktisk meget modig!",
+      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
+    
   },
   {
     className: "fish2",
@@ -183,9 +182,10 @@ const fishInfo = [
   function showTooltip(fishData) {
     if (tooltip && tooltipContent) {
       tooltipContent.innerHTML = `
+      <div class= "font-finger-paint">
         <h3>${fishData.name}</h3>
         <p>${fishData.info1}</p>
-        <p>${fishData.info2}</p>
+        </div>
       `;
       tooltip.classList.add("is-visible");
 

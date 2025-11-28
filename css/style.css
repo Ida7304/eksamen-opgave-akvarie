@@ -3,8 +3,14 @@
   --fish-small-w: 13vw;
   --fish-medium-w: 16vw;
   --fish-big-w: 20vw;
-  --font: andika;
 }
+
+.font-finger-paint {
+  font-family: "Finger Paint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Reset style */
 * {
@@ -485,7 +491,6 @@ body {
   position: absolute;
   top: 70vh;
   left: 30vw;
-  z-index: 11;
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
