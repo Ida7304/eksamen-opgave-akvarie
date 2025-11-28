@@ -103,6 +103,7 @@ const fishInfo = [
     className: "fish2",
     name: "Sandspiser-gobi",
     imgId: "sandspiser-info",
+    imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc: "audio/sandspiser-gobi-speech-1.mp3",
     info1:
       "Jeg hedder Sandspiser-gobi, og jeg bor på sandbunden i koralrevene i Stillehavet og Det Indiske Ocean. Jeg elsker at suge sand ind, spise de små dyr, der gemmer sig deri og så spytter jeg det rene sand ud igen!",
@@ -113,6 +114,7 @@ const fishInfo = [
     className: "fish3",
     name: "Rævefjæs",
     imgId: "raevefisk-info",
+    imgStopSrc: "img/raevefjaes-closed-mouth.png",
     fishAudioSrc: "audio/raevefjaes-speech-1.mp3",
     info1:
       "Jeg hedder Rævefjæs og ja, mit ansigt ligner en ræv! Jeg bor i Stillehavet tæt på Australien og Filippinerne, hvor jeg svømmer rundt mellem koralrevene.",
@@ -123,6 +125,7 @@ const fishInfo = [
     className: "fish4",
     name: "Pindsvinefisk",
     imgId: "pindsvinefisk-info",
+    imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
     fishAudioSrc: "audio/pindsvinefisk-speech-1.mp3",
     info1:
       "Hej du! Jeg er en Pindsvinefisk, og jeg bor i varme have som Caribien og Det Røde Hav. Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge",
@@ -133,6 +136,7 @@ const fishInfo = [
     className: "fish5",
     name: "Pudsefisk",
     imgId: "pudsefisk-info",
+    imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc: "audio/pudsefisk-speech-1.mp3",
     info1:
       "Hej, jeg er en Pudsefisk — havets egen frisør! Jeg bor på tropiske koralrev, og mit job er at rense de andre fisk.",
@@ -143,6 +147,7 @@ const fishInfo = [
     className: "fish6",
     name: "Kirurgfisk",
     imgId: "kirurgfisk-info",
+    imgStopSrc: "img/kirurgfisk-closed-mouth.png",
     fishAudioSrc: "audio/kirurgfisk-speech-1.mp3",
     info1:
       'Jeg er en Kirurgfisk, og jeg bor i de varme koralhave i Stillehavet. Jeg har små, skarpe "knive" ved min hale derfor kalder de mig kirurg! Men bare rolig, jeg bruger dem kun, hvis jeg skal forsvare mig.',
@@ -153,6 +158,7 @@ const fishInfo = [
     className: "fish7",
     name: "Blå Chromis",
     imgId: "blue-chromis-info",
+    imgStopSrc: "img/blue-chromis-closed-mouth.png",
     fishAudioSrc: "audio/blue-chromis-speech-1.mp3",
     info1:
       "Halløj! Jeg er en Blå Chromis, og jeg bor på de farverige koralrev i Caribien. Jeg er lille, hurtig og skinner som et blåt lyn i vandet!",
