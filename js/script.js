@@ -1,13 +1,10 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
 // Variabler
-const akvarieMandenClosedImg = document.getElementById(
-  "akvariemanden-closed-mouth"
-);
+const akvarieMandenClosedImg = document.getElementById("akvariemanden-closed-mouth");
 const klikMigBtn = document.querySelector(".akvariemand-start-tekstboks");
-const akvariemandTaleBoks = document.querySelector(
-  ".akvariemand-slut-tekstboks"
-);
+const akvariemandTaleBoks = document.querySelector(".akvariemand-slut-tekstboks");
+const lukBtnAm = document.querySelector(".close-btn-am");
 
 // Variabel til lyden der spiller når fiskene snakker
 // Vi bruger let så vi kan ændre dens værdi senere
@@ -16,6 +13,27 @@ let fishSpeak = null;
 // Henter lyden til akvariemanden
 const akvarieMandenSound = new Audio();
 akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
+
+// Funktion til luk knappen ved akvariemandens tekstboks
+if(lukBtnAm) {
+  lukBtnAm.addEventListener("click", () => {
+    // Hvis lyden spiller, stopper den lyden og nulstiller tidspunktet så det starter forfra.
+    if (akvarieMandenSound) {
+      akvarieMandenSound.pause();
+      akvarieMandenSound.currentTime = 0;
+    }
+// Erstatter GIF'en med billedet af akvariemanden der ikke snakker
+    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
+// Gør klik på mig knappen synlig igen
+    klikMigBtn.classList.remove("is-not-visible");
+// Gør taleboksen usynlig
+    akvariemandTaleBoks.classList.remove("is-visible");
+// Gør luk knappen usynlig
+    lukBtnAm.classList.remove("visible");
+  });
+}
+
+
 
 // Afspiller snakke animation og lyd til akvariemanden når man klikker på ham
 if (akvarieMandenClosedImg) {
@@ -29,6 +47,8 @@ if (akvarieMandenClosedImg) {
     // Gør akvariemandens taleboks synlig mens han snakker
     akvariemandTaleBoks.classList.add("is-visible");
 
+       lukBtnAm.classList.add("visible");
+
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
@@ -37,6 +57,9 @@ if (akvarieMandenClosedImg) {
 
       // Gør akvariemandens taleboks usynlig når han er færdig med at snakke
       akvariemandTaleBoks.classList.remove("is-visible");
+
+         lukBtnAm.classList.remove("visible");
+
     }, 16000);
   });
 }
@@ -54,6 +77,7 @@ if (klikMigBtn) {
 
     // Gør akvariemandens taleboks synlig mens han snakker
     akvariemandTaleBoks.classList.add("is-visible");
+
 
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
@@ -96,9 +120,9 @@ const fishInfo = [
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc: "audio/klovnfisk-speech-1.mp3",
     info1:
-      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
-    
+      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>"
   },
+
   {
     className: "fish2",
     name: "Sandspiser-gobi",
@@ -107,10 +131,9 @@ const fishInfo = [
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc: "audio/sandspiser-gobi-speech-1.mp3",
     info1:
-      "Jeg hedder Sandspiser-gobi, og jeg bor på sandbunden i koralrevene i Stillehavet og Det Indiske Ocean. Jeg elsker at suge sand ind, spise de små dyr, der gemmer sig deri og så spytter jeg det rene sand ud igen!",
-    info2:
-      "Jeg bygger små huler i sandet, hvor jeg bor — jeg er lidt som en undervandsbygger!",
+      "Dav, jeg er en Sandspiser-gobi <p>Jeg elsker at suge sand ind, spise de små dyr der gemmer sig deri - og så spytter jeg det rene sand ud igen!</p>"
   },
+
   {
     className: "fish3",
     name: "Rævefjæs",
@@ -119,10 +142,9 @@ const fishInfo = [
     imgStopSrc: "img/raevefjaes-closed-mouth.png",
     fishAudioSrc: "audio/raevefjaes-speech-1.mp3",
     info1:
-      "Jeg hedder Rævefjæs og ja, mit ansigt ligner en ræv! Jeg bor i Stillehavet tæt på Australien og Filippinerne, hvor jeg svømmer rundt mellem koralrevene.",
-    info2:
-      "Jeg spiser alger og havplanter, så jeg hjælper med at holde revet rent. Men pas på mine finner — de har giftige pigge, så ingen tør røre mig",
+      "Jeg er en Rævefjæse og ja, mit ansigt ligner en ræv! <p>Jeg har giftige pigge på mine finner, så ingen tør røre mig!</p>"
   },
+
   {
     className: "fish4",
     name: "Pindsvinefisk",
@@ -131,10 +153,9 @@ const fishInfo = [
     imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
     fishAudioSrc: "audio/pindsvinefisk-speech-1.mp3",
     info1:
-      "Hej du! Jeg er en Pindsvinefisk, og jeg bor i varme have som Caribien og Det Røde Hav. Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge",
-    info2:
-      "Jeg spiser snegle, små krabber og skaldyr, og mine tænder er så stærke, at jeg kan knuse skaller. Jeg ser måske sød ud men jeg er ikke til at spøge med!",
+      "Hej du! Jeg er en Pindsvinefisk! <p>Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge</p>"
   },
+
   {
     className: "fish5",
     name: "Pudsefisk",
@@ -143,10 +164,9 @@ const fishInfo = [
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc: "audio/pudsefisk-speech-1.mp3",
     info1:
-      "Hej, jeg er en Pudsefisk — havets egen frisør! Jeg bor på tropiske koralrev, og mit job er at rense de andre fisk.",
-    info2:
-      "De kommer til min rengøringsstation, hvor jeg spiser snavs og små parasitter fra deres hud. Jeg får mad og de bliver rene! Win-win!",
+      "Hej, jeg er en Pudsefisk <p>Jeg er havets egen frisør og elsker at rense andre fisk!</p>"
   },
+  
   {
     className: "fish6",
     name: "Kirurgfisk",
@@ -155,10 +175,9 @@ const fishInfo = [
     imgStopSrc: "img/kirurgfisk-closed-mouth.png",
     fishAudioSrc: "audio/kirurgfisk-speech-1.mp3",
     info1:
-      'Jeg er en Kirurgfisk, og jeg bor i de varme koralhave i Stillehavet. Jeg har små, skarpe "knive" ved min hale derfor kalder de mig kirurg! Men bare rolig, jeg bruger dem kun, hvis jeg skal forsvare mig.',
-    info2:
-      "Jeg elsker alger — de er min yndlingsmad. Jeg er lidt som havets græsslåmaskine!",
+      "Hejsa! Jeg er en Kirurgfisk! <p>Vi er næsten 75 arter af min slags, der suser rundt og leger i koralrevene</p>"
   },
+
   {
     className: "fish7",
     name: "Blå Chromis",
@@ -167,9 +186,7 @@ const fishInfo = [
     imgStopSrc: "img/blue-chromis-closed-mouth.png",
     fishAudioSrc: "audio/blue-chromis-speech-1.mp3",
     info1:
-      "Halløj! Jeg er en Blå Chromis, og jeg bor på de farverige koralrev i Caribien. Jeg er lille, hurtig og skinner som et blåt lyn i vandet!",
-    info2:
-      "Jeg elsker at svømme sammen med mine venner — vi ser ud som en hel sky af blå glimt. Min yndlingsmad? Plankton!",
+      "Halløj! Jeg er en Blå Chromis <p>Jeg er lille, hurtig og skinner som et blåt lyn i vandet!</p>"
   },
 ];
 
