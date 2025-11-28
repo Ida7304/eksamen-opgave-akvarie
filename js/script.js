@@ -92,6 +92,7 @@ const fishInfo = [
     className: "fish1",
     name: "Klovnfisk",
     imgId: "klovnfisk-info",
+    imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc: "audio/klovnfisk-speech-1.mp3",
     info1:
       "Hej! Jeg hedder Klovnfisk, og jeg bor i de varme koralhave omkring Australien og Indonesien. Jeg elsker at gemme mig i min søanemone, som beskytter mig med sine giftige arme, men den stikker ikke mig, for vi er bedste venner!",
@@ -183,12 +184,12 @@ const fishInfo = [
       // Henter fishImg fra array og viser kun det billede der tilhører den fisk der klikkes på
       const fishImg = document.getElementById(fishData.imgId);
       if (fishImg) {
-        fishImg.src = "video/klovnfisk-talking.gif"
         fishImg.style.opacity = 1;
 
          setTimeout(() => {
-        fishImg.src = "img/klovnfisk-closed-mouth.png";
+          fishImg.src = fishData.imgStopSrc;
     }, 8500);
+
       }
       
         if(fishData.fishAudioSrc) {
