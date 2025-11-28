@@ -1,8 +1,8 @@
 /* Variabler */
 :root {
-  --fish-small-w: 13vw;
-  --fish-medium-w: 16vw;
-  --fish-big-w: 20vw;
+  --fish-small-w: 14vw;
+  --fish-medium-w: 17vw;
+  --fish-big-w: 23vw;
 }
 
 .font-finger-paint {
@@ -47,7 +47,7 @@ body {
 /* Fisk container */
 .fisk-container {
   position: absolute;
-  top: 0;
+  top: 10vh;
   left: 0;
   width: 100%;
   height: 100%;
@@ -65,11 +65,13 @@ body {
 
 /* Animation til klovnfisk */
 .fish1 {
+  position: absolute;
   bottom: 50vh;
   width: var(--fish-medium-w);
-  left: calc(-1 * var(--fish-small-w));
+  left: calc(-1 * var(--fish-medium-w));
   animation: fish1 12s linear infinite;
   animation-delay: 0s;
+  rotate: 4deg;
   z-index: 2;
 }
 @keyframes fish1 {
@@ -77,20 +79,19 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(100vw + var(--fish-small-w)));
+    transform: translateX(calc(100vw + var(--fish-medium-w)));
   }
 }
 
 /* Animation til sandspiser-gobi */
 .fish2 {
   position: absolute;
-  bottom: 50vh;
+  bottom: 5vh;
   width: var(--fish-small-w);
   right: calc(-1 * var(--fish-small-w));
   animation: fish2 9s linear infinite;
   animation-delay: 2s;
-  will-change: transform;
-  rotate: 5deg;
+  rotate: 3deg;
   z-index: 3;
 }
 @keyframes fish2 {
@@ -131,6 +132,7 @@ body {
   animation: fish4 16s linear infinite;
   animation-delay: 6s;
   will-change: transform;
+  rotate: -1deg;
   z-index: 3;
 }
 @keyframes fish4 {
@@ -150,6 +152,7 @@ body {
   left: calc(-1 * var(--fish-small-w));
   animation: fish5 10s linear infinite;
   animation-delay: 8s;
+  rotate: -2deg;
   z-index: 1;
 }
 @keyframes fish5 {
@@ -170,6 +173,7 @@ body {
   animation: fish6 8s linear infinite;
   animation-delay: 4s;
   will-change: transform;
+  rotate: 3deg;
   z-index: 3;
 }
 @keyframes fish6 {
@@ -189,6 +193,7 @@ body {
   width: var(--fish-small-w);
   animation: fish7 7s linear infinite;
   animation-delay: 4s;
+  rotate: 3deg;
   z-index: 1;
 }
 @keyframes fish7 {
@@ -223,7 +228,7 @@ body {
   top: 90vh;
   z-index: 12;
   left: 5.4vw;
-  font-family: var(--font);
+  font-family: "Finger Paint", sans-serif;
   animation: pulse 2.5s infinite;
 }
 
@@ -237,7 +242,7 @@ body {
   position: absolute;
   z-index: 13;
   left: 20vw;
-  font-family: var(--font);
+  font-family: "Finger Paint", sans-serif;
   opacity: 0;
 }
 
