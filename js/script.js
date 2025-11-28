@@ -92,6 +92,7 @@ const fishInfo = [
     className: "fish1",
     name: "Klovnfisk",
     imgId: "klovnfisk-info",
+    gifSrc: "video/klovnfisk-talking.gif",
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc: "audio/klovnfisk-speech-1.mp3",
     info1:
@@ -103,6 +104,7 @@ const fishInfo = [
     className: "fish2",
     name: "Sandspiser-gobi",
     imgId: "sandspiser-info",
+    gifSrc: "video/sandspiser-gobi-talking.gif",
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc: "audio/sandspiser-gobi-speech-1.mp3",
     info1:
@@ -114,6 +116,7 @@ const fishInfo = [
     className: "fish3",
     name: "Rævefjæs",
     imgId: "raevefisk-info",
+    gifSrc: "video/raevefjaes-talking.gif",
     imgStopSrc: "img/raevefjaes-closed-mouth.png",
     fishAudioSrc: "audio/raevefjaes-speech-1.mp3",
     info1:
@@ -125,6 +128,7 @@ const fishInfo = [
     className: "fish4",
     name: "Pindsvinefisk",
     imgId: "pindsvinefisk-info",
+    gifSrc: "video/pindsvinefisk-talking.gif",
     imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
     fishAudioSrc: "audio/pindsvinefisk-speech-1.mp3",
     info1:
@@ -136,6 +140,7 @@ const fishInfo = [
     className: "fish5",
     name: "Pudsefisk",
     imgId: "pudsefisk-info",
+    gifSrc: "video/pudsefisk-talking.gif",
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc: "audio/pudsefisk-speech-1.mp3",
     info1:
@@ -147,6 +152,7 @@ const fishInfo = [
     className: "fish6",
     name: "Kirurgfisk",
     imgId: "kirurgfisk-info",
+    gifSrc: "video/kirurgfisk-talking.gif",
     imgStopSrc: "img/kirurgfisk-closed-mouth.png",
     fishAudioSrc: "audio/kirurgfisk-speech-1.mp3",
     info1:
@@ -158,6 +164,7 @@ const fishInfo = [
     className: "fish7",
     name: "Blå Chromis",
     imgId: "blue-chromis-info",
+    gifSrc: "video/blue-chromis-talking.gif",
     imgStopSrc: "img/blue-chromis-closed-mouth.png",
     fishAudioSrc: "audio/blue-chromis-speech-1.mp3",
     info1:
@@ -191,6 +198,7 @@ const fishInfo = [
       const fishImg = document.getElementById(fishData.imgId);
       if (fishImg) {
         fishImg.style.opacity = 1;
+        fishImg.src = fishData.gifSrc;
 
          setTimeout(() => {
           fishImg.src = fishData.imgStopSrc;

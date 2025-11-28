@@ -164,7 +164,6 @@ body {
   animation: fish6 8s linear infinite;
   animation-delay: 4s;
   will-change: transform;
-  rotate: 10deg;
   z-index: 3;
 }
 @keyframes fish6 {
@@ -500,27 +499,41 @@ body {
 
 
 #sandspiser-info {
- top: 51vh;
+ top: 32vh;
+ width: 30vw;
+ left: 27vw;
 }
 
 
 #raevefisk-info {
-  width: 30vw;
-  left: 28vw;
+  width: 33vw;
+  left: 25vw;
+  top: 33vh;
 }
 
 
 #pindsvinefisk-info {
-  top: 57vh;
+  top: 2vh;
+  width: 35vw;
+  left: 22vw;
 }
 
 
 #kirurgfisk-info {
-  rotate: -10deg;
-  top: 65vh;
+  top: 27vh;
+  width: 40vw;
+  left: 22vw;
 }
 
 
 #blue-chromis-info {
-  top: 65vh;
+  top: 35vh;
+  width: 30vw;
+  left: 25vw;
+}
+
+#pudsefisk-info {
+  top: 35vh;
+  width: 30vw;
+  left: 27vw;
 }
