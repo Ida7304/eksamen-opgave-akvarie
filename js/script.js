@@ -206,6 +206,13 @@ const fishInfo = [
       `;
       tooltip.classList.add("is-visible");
 
+      // Gør akvariemanden, fiskene og klik på mig knappen usynlig når man klikker på en fisk
+      document.querySelector(".akvariemanden").classList.add("klik-fisk-skjul");
+      document.querySelector(".akvariemand-start-tekstboks").classList.add("klik-fisk-skjul");
+      document.querySelectorAll(".fisk-container img").forEach(img => {
+        img.classList.add("klik-fisk-skjul");
+      });
+
       // Vælger klassen "info-fish img" og gør alle billederne usynlig fra start af
       document.querySelectorAll(".info-fish img"). forEach(img => {
         img.style.opacity = 0;
@@ -248,6 +255,13 @@ const fishInfo = [
       document.querySelectorAll(".info-fish img").forEach(img => {
     img.style.opacity = 0;
   });
+
+  // Gør fiskene, akvariemanden og klik på mig knappen synlig når tooltip lukkes
+    document.querySelector(".akvariemanden").classList.remove("klik-fisk-skjul");
+    document.querySelector(".akvariemand-start-tekstboks").classList.remove("klik-fisk-skjul");
+    document.querySelectorAll(".fisk-container img").forEach(img => {
+        img.classList.remove("klik-fisk-skjul");
+      });
 
   if(fishSpeak) {
     // Pause stopper lyden
