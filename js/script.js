@@ -121,9 +121,10 @@ const fishInfo = [
     imgId: "klovnfisk-info",
     gifSrc: "video/klovnfisk-talking.gif",
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
-    fishAudioSrc: "audio/klovnfisk-speech-1.mp3",
+    fishAudioSrc1: "audio/klovnfisk-speech-1.mp3",
     info1:
-      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>"
+      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
+    info2: "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem <p>Vi bliver alle sammen født som hanner! Hvis en hun dør, skifter hannen køn og bliver til en hun!</p>"
   },
 
   {
@@ -132,7 +133,7 @@ const fishInfo = [
     imgId: "sandspiser-info",
     gifSrc: "video/sandspiser-gobi-talking.gif",
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
-    fishAudioSrc: "audio/sandspiser-gobi-speech-1.mp3",
+    fishAudioSrc1: "audio/sandspiser-gobi-speech-1.mp3",
     info1:
       "Dav, jeg er en Sandspiser-gobi <p>Jeg elsker at suge sand ind, spise de små dyr der gemmer sig deri - og så spytter jeg det rene sand ud igen!</p>"
   },
@@ -143,7 +144,7 @@ const fishInfo = [
     imgId: "raevefisk-info",
     gifSrc: "video/raevefjaes-talking.gif",
     imgStopSrc: "img/raevefjaes-closed-mouth.png",
-    fishAudioSrc: "audio/raevefjaes-speech-1.mp3",
+    fishAudioSrc1: "audio/raevefjaes-speech-1.mp3",
     info1:
       "Jeg er en Rævefjæse og ja, mit ansigt ligner en ræv! <p>Jeg har giftige pigge på mine finner, så ingen tør røre mig!</p>"
   },
@@ -154,7 +155,7 @@ const fishInfo = [
     imgId: "pindsvinefisk-info",
     gifSrc: "video/pindsvinefisk-talking.gif",
     imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
-    fishAudioSrc: "audio/pindsvinefisk-speech-1.mp3",
+    fishAudioSrc1: "audio/pindsvinefisk-speech-1.mp3",
     info1:
       "Hej du! Jeg er en Pindsvinefisk! <p>Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge</p>"
   },
@@ -165,7 +166,7 @@ const fishInfo = [
     imgId: "pudsefisk-info",
     gifSrc: "video/pudsefisk-talking.gif",
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
-    fishAudioSrc: "audio/pudsefisk-speech-1.mp3",
+    fishAudioSrc1: "audio/pudsefisk-speech-1.mp3",
     info1:
       "Hej, jeg er en Pudsefisk <p>Jeg er havets egen frisør og elsker at rense andre fisk!</p>"
   },
@@ -176,7 +177,7 @@ const fishInfo = [
     imgId: "kirurgfisk-info",
     gifSrc: "video/kirurgfisk-talking.gif",
     imgStopSrc: "img/kirurgfisk-closed-mouth.png",
-    fishAudioSrc: "audio/kirurgfisk-speech-1.mp3",
+    fishAudioSrc1: "audio/kirurgfisk-speech-1.mp3",
     info1:
       "Hejsa! Jeg er en Kirurgfisk! <p>Vi er næsten 75 arter af min slags, der suser rundt og leger i koralrevene</p>"
   },
@@ -187,7 +188,7 @@ const fishInfo = [
     imgId: "blue-chromis-info",
     gifSrc: "video/blue-chromis-talking.gif",
     imgStopSrc: "img/blue-chromis-closed-mouth.png",
-    fishAudioSrc: "audio/blue-chromis-speech-1.mp3",
+    fishAudioSrc1: "audio/blue-chromis-speech-1.mp3",
     info1:
       "Halløj! Jeg er en Blå Chromis <p>Jeg er lille, hurtig og skinner som et blåt lyn i vandet!</p>"
   },
@@ -216,8 +217,6 @@ const fishInfo = [
         img.classList.add("klik-fisk-skjul");
       });
 
-  
-
       // Henter fishImg fra array og viser kun det billede der tilhører den fisk der klikkes på
       const fishImg = document.getElementById(fishData.imgId);
       if (fishImg) {
@@ -231,7 +230,7 @@ const fishInfo = [
 
       }
       
-        if(fishData.fishAudioSrc) {
+        if(fishData.fishAudioSrc1) {
 
           if(fishSpeak) {
             // Pause gør at hvis man klikker på en anden fisk, før lyden er færdig med at spille,
@@ -241,8 +240,24 @@ const fishInfo = [
             fishSpeak.currentTime = 0;
           }
           // Henter lydfilen defineret i array
-          fishSpeak = new Audio(fishData.fishAudioSrc);
+          fishSpeak = new Audio(fishData.fishAudioSrc1);
           fishSpeak.play();
+        }
+
+        // Funktion til "lær mere" knappen
+        const learnMoreBtn = document.querySelector(".learn-more-btn");
+
+        if(learnMoreBtn) {
+          learnMoreBtn.addEventListener("click", () => {
+          // Finder info2 i arrayet og viser kun den ved klik på knappen
+            tooltipContent.innerHTML = `
+              <div class= "font-finger-paint">
+                <p>${fishData.info2}</p>
+              </div>`;
+
+            
+            
+          });
         }
     }
   }
