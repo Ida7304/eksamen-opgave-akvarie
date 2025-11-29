@@ -14,6 +14,12 @@ let fishSpeak = null;
 const akvarieMandenSound = new Audio();
 akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
 
+
+
+// -----------------------
+// Akvariemandens funktion
+// -----------------------
+
 // Funktion til luk knappen ved akvariemandens tekstboks
 if(lukBtnAm) {
   lukBtnAm.addEventListener("click", () => {
@@ -32,8 +38,6 @@ if(lukBtnAm) {
     lukBtnAm.classList.remove("visible");
   });
 }
-
-
 
 // Afspiller snakke animation og lyd til akvariemanden når man klikker på ham
 if (akvarieMandenClosedImg) {
@@ -63,6 +67,7 @@ if (akvarieMandenClosedImg) {
     }, 16000);
   });
 }
+
 
 // Samme funktioner som ovenstående bare tilføjet til "klik på mig" knappen så man kan
 // klikke på den eller akvariemanden for at få ham til at snakke
@@ -94,6 +99,11 @@ if (klikMigBtn) {
   });
 }
 
+
+// ---------
+// Boblerne
+// ---------
+
   const bubblesContainer = document.querySelector(".bubbles");
   for (let i = 0; i < 18; i++) {
     const bubble = document.createElement("div");
@@ -111,6 +121,10 @@ if (klikMigBtn) {
   };
 
 
+//------------------- 
+// Array til fiskene
+//-------------------
+
 /* anne-sofie har lavet javascript til tooltip */
 
 // HTML struktur for fiskenes talebobler
@@ -122,6 +136,7 @@ const fishInfo = [
     gifSrc: "video/klovnfisk-talking.gif",
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc1: "audio/klovnfisk-speech-1.mp3",
+    fishAudioSrc2: "audio/klovnfisk-speech-2.mp3",
     info1:
       "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
     info2: "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem <p>Vi bliver alle sammen født som hanner! Hvis en hun dør, skifter hannen køn og bliver til en hun!</p>"
@@ -195,6 +210,10 @@ const fishInfo = [
 ];
 
 
+// ----------------
+// Tooltip funktion
+// ----------------
+
   const tooltip = document.getElementById("tooltip");
   const tooltipContent = document.querySelector(".tooltip-content");
   const closeBtn = document.querySelector(".close-btn");
@@ -231,7 +250,6 @@ const fishInfo = [
       }
       
         if(fishData.fishAudioSrc1) {
-
           if(fishSpeak) {
             // Pause gør at hvis man klikker på en anden fisk, før lyden er færdig med at spille,
             // pauser den den nuværende lyd og den nye afspilles.
@@ -255,12 +273,34 @@ const fishInfo = [
                 <p>${fishData.info2}</p>
               </div>`;
 
-            
+          //Afspiller den næste lydfil til fisken 
+          if(fishData.fishAudioSrc2) {
+            fishSpeak.pause();
+            fishSpeak.currentTime = 0;
+            fishSpeak = new Audio (fishData.fishAudioSrc2);
+            fishSpeak.play();
+          }
+          
+             if (fishImg) {
+              fishImg.style.opacity = 1;
+              fishImg.src = fishData.gifSrc;
+
+              // Erstatter gif'en med billedet af fisken så den stopper med at snakke
+                setTimeout(() => {
+                 fishImg.src = fishData.imgStopSrc;
+                }, 11000);
+              }
             
           });
         }
     }
   }
+
+
+
+// ---------------------
+// Hide Tooltip funktion
+// ---------------------
 
   function hideTooltip() {
     if (tooltip) {
@@ -288,8 +328,6 @@ const fishInfo = [
   }
   }
 
-
-
   if (closeBtn) {
     closeBtn.addEventListener("click", hideTooltip);
   }
@@ -302,6 +340,10 @@ const fishInfo = [
     });
   });
 
+
+// ------------
+// Baggrundslyd
+// ------------
 
 // Skrue ned for baggrundslyden
 const backgroundAudio = document.getElementById("underwater-sound");
