@@ -79,12 +79,14 @@ if (klikMigBtn) {
     akvariemandTaleBoks.classList.add("is-visible");
 
       lukBtnAm.classList.add("visible");
-      
+
     // Stopper snakke animationen efter 16 sekunder
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
       // Gør "klik på mig" knappen synlig når han er færdig med at snakke
       klikMigBtn.classList.remove("is-not-visible");
+
+      lukBtnAm.classList.remove("visible");
 
       // Gør akvariemandens taleboks usynlig når han er færdig med at snakke
       akvariemandTaleBoks.classList.remove("is-visible");
@@ -214,10 +216,7 @@ const fishInfo = [
         img.classList.add("klik-fisk-skjul");
       });
 
-      // Vælger klassen "info-fish img" og gør alle billederne usynlig fra start af
-      document.querySelectorAll(".info-fish img"). forEach(img => {
-        img.style.opacity = 0;
-      });
+  
 
       // Henter fishImg fra array og viser kun det billede der tilhører den fisk der klikkes på
       const fishImg = document.getElementById(fishData.imgId);
@@ -225,6 +224,7 @@ const fishInfo = [
         fishImg.style.opacity = 1;
         fishImg.src = fishData.gifSrc;
 
+        // Erstatter gif'en med billedet af fisken så den stopper med at snakke
          setTimeout(() => {
           fishImg.src = fishData.imgStopSrc;
     }, 8500);
@@ -282,8 +282,6 @@ const fishInfo = [
   fishInfo.forEach((fish) => {
     document.querySelectorAll("." + fish.className).forEach((elem) => {
       elem.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
         showTooltip(fish);
       });
     });
