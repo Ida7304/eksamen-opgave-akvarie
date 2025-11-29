@@ -137,8 +137,7 @@ const fishInfo = [
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc1: "audio/klovnfisk-speech-1.mp3",
     fishAudioSrc2: "audio/klovnfisk-speech-2.mp3",
-    info1:
-      "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
+    info1: "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
     info2: "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem <p>Vi bliver alle sammen født som hanner! Hvis en hun dør, skifter hannen køn og bliver til en hun!</p>"
   },
 
@@ -149,8 +148,9 @@ const fishInfo = [
     gifSrc: "video/sandspiser-gobi-talking.gif",
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc1: "audio/sandspiser-gobi-speech-1.mp3",
-    info1:
-      "Dav, jeg er en Sandspiser-gobi <p>Jeg elsker at suge sand ind, spise de små dyr der gemmer sig deri - og så spytter jeg det rene sand ud igen!</p>"
+    fishAudioSrc2: "audio/sandspiser-gobi-speech-2.mp3",
+    info1: "Dav, jeg er en Sandspiser-gobi <p>Jeg elsker at suge sand ind, spise de små dyr der gemmer sig deri - og så spytter jeg det rene sand ud igen!</p>",
+    info2: "Jeg bygger små huler i sandet, hvor jeg bor <p>Det hjælper små rejer mig med.<br> Rejerne graver mens jeg holder vagt</p>"
   },
 
   {
@@ -160,8 +160,9 @@ const fishInfo = [
     gifSrc: "video/raevefjaes-talking.gif",
     imgStopSrc: "img/raevefjaes-closed-mouth.png",
     fishAudioSrc1: "audio/raevefjaes-speech-1.mp3",
-    info1:
-      "Jeg er en Rævefjæse og ja, mit ansigt ligner en ræv! <p>Jeg har giftige pigge på mine finner, så ingen tør røre mig!</p>"
+    fishAudioSrc2: "audio/raevefjaes-speech-2.mp3",
+    info1: "Jeg er en Rævefjæse og ja, mit ansigt ligner en ræv! <p>Jeg har giftige pigge på mine finner, så ingen tør røre mig!</p>",
+    info2: "Jeg spiser alger og havplanter, så jeg hjælper med at holde havet rent <p>Når jeg bliver forskrækket, skifter jeg farve og bliver helt mørk for at skjule mig!</p>"
   },
 
   {
@@ -171,8 +172,9 @@ const fishInfo = [
     gifSrc: "video/pindsvinefisk-talking.gif",
     imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
     fishAudioSrc1: "audio/pindsvinefisk-speech-1.mp3",
-    info1:
-      "Hej du! Jeg er en Pindsvinefisk! <p>Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge</p>"
+    fishAudioSrc2: "audio/pindsvinefisk-speech-2.mp3",
+    info1: "Hej du! Jeg er en Pindsvinefisk! <p>Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge</p>",
+    info2: "Jeg spiser snegle, små krabber og skaldyr. Mine tænder er så stærke, at jeg kan knuse skaller <p>Når jeg puster mig op, kan jeg blive 3 gange større end normalt!</p>"
   },
 
   {
@@ -182,8 +184,9 @@ const fishInfo = [
     gifSrc: "video/pudsefisk-talking.gif",
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc1: "audio/pudsefisk-speech-1.mp3",
-    info1:
-      "Hej, jeg er en Pudsefisk <p>Jeg er havets egen frisør og elsker at rense andre fisk!</p>"
+    fishAudioSrc2: "audio/pudsefisk-speech-2.mp3",
+    info1: "Hej, jeg er en Pudsefisk <p>Jeg er havets egen frisør og elsker at rense andre fisk!</p>",
+    info2: "Selv store hajer og rokker elsker at blive renset af mig! <p>De kommer til min 'rengøringsstation', hvor jeg spiser snavs og små parasitter fra deres hud. <br> Jeg får mad og de bliver rene!</p>"
   },
   
   {
@@ -193,8 +196,9 @@ const fishInfo = [
     gifSrc: "video/kirurgfisk-talking.gif",
     imgStopSrc: "img/kirurgfisk-closed-mouth.png",
     fishAudioSrc1: "audio/kirurgfisk-speech-1.mp3",
-    info1:
-      "Hejsa! Jeg er en Kirurgfisk! <p>Vi er næsten 75 arter af min slags, der suser rundt og leger i koralrevene</p>"
+    fishAudioSrc2: "audio/kirurgfisk-speech-2.mp3",
+    info1: "Hejsa! Jeg er en Kirurgfisk! <p>Vi er næsten 75 arter af min slags, der suser rundt og leger i koralrevene</p>",
+    info2: "Jeg har små skarpe 'knive' ved min hale - derfor kalder man mig kirurg! <p>Men bare rolig, jeg bruger dem kun, hvis jeg skal forsvare mig</p>"
   },
 
   {
@@ -204,8 +208,9 @@ const fishInfo = [
     gifSrc: "video/blue-chromis-talking.gif",
     imgStopSrc: "img/blue-chromis-closed-mouth.png",
     fishAudioSrc1: "audio/blue-chromis-speech-1.mp3",
-    info1:
-      "Halløj! Jeg er en Blå Chromis <p>Jeg er lille, hurtig og skinner som et blåt lyn i vandet!</p>"
+    fishAudioSrc2: "audio/blue-chromis-speech-2.mp3",
+    info1: "Halløj! Jeg er en Blå Chromis <p>Jeg er lille, hurtig og skinner som et blåt lyn i vandet!</p>",
+    info2: "Når solen går ned, bliver min blå farve mørkere, så jeg er sværere at se for rovfisk <p>Min livret? Plankton! De smager bedst når de danser i strømmen!</p>"
   },
 ];
 
