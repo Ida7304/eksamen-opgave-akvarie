@@ -10,6 +10,11 @@ const lukBtnAm = document.querySelector(".close-btn-am");
 // Vi bruger let så vi kan ændre dens værdi senere
 let fishSpeak = null;
 
+// Variable til den aktive fisk.
+// Vi bruger igen let så værdien kan ændres alt efter hvilken fisk der er tale om
+// Denne værdi gør at vi kan resette fiskene hver gang vi klikker på en ny, så vi undgår overlap
+let activeFish = null;
+
 // Henter lyden til akvariemanden
 const akvarieMandenSound = new Audio();
 akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
@@ -226,6 +231,7 @@ const fishInfo = [
   
   function showTooltip(fishData) {
     if (tooltip && tooltipContent) {
+      activeFish = fishData;
       tooltipContent.innerHTML = `
       <div class= "font-finger-paint">
         <h3>${fishData.name}</h3>
@@ -233,6 +239,9 @@ const fishInfo = [
         </div>
       `;
       tooltip.classList.add("is-visible");
+
+      // Sørger fo at lær-mere-knappen er synlig hver gang man klikker på en ny fisk
+      learnMoreBtn.style.display = "block";
 
       // Gør akvariemanden, fiskene og klik på mig knappen usynlig når man klikker på en fisk
       document.querySelector(".akvariemanden").classList.add("klik-fisk-skjul");
@@ -266,8 +275,16 @@ const fishInfo = [
           fishSpeak = new Audio(fishData.fishAudioSrc1);
           fishSpeak.play();
         }
+    }
+  }
 
-        // Funktion til "lær mere" knappen
+
+
+// -------------
+// Lær mere knap
+// -------------
+
+   // Funktion til "lær mere" knappen
         const learnMoreBtn = document.querySelector(".learn-more-btn");
 
         if(learnMoreBtn) {
@@ -275,32 +292,33 @@ const fishInfo = [
           // Finder info2 i arrayet og viser kun den ved klik på knappen
             tooltipContent.innerHTML = `
               <div class= "font-finger-paint">
-                <p>${fishData.info2}</p>
+                <p>${activeFish.info2}</p>
               </div>`;
 
+          //Fjerner "lær mere"-knappen nå man har klikket på den
+            learnMoreBtn.style.display = "none"; 
+
           //Afspiller den næste lydfil til fisken 
-          if(fishData.fishAudioSrc2) {
+          if(activeFish.fishAudioSrc2) {
             fishSpeak.pause();
             fishSpeak.currentTime = 0;
-            fishSpeak = new Audio (fishData.fishAudioSrc2);
+            fishSpeak = new Audio (activeFish.fishAudioSrc2);
             fishSpeak.play();
           }
-          
+
+          // Sikrer at det kun er billedet tilhørende den fisk der er klikket på der vises
+          const fishImg = document.getElementById(activeFish.imgId);
              if (fishImg) {
               fishImg.style.opacity = 1;
-              fishImg.src = fishData.gifSrc;
+              fishImg.src = activeFish.gifSrc;
 
               // Erstatter gif'en med billedet af fisken så den stopper med at snakke
                 setTimeout(() => {
-                 fishImg.src = fishData.imgStopSrc;
+                 fishImg.src = activeFish.imgStopSrc;
                 }, 11000);
               }
-            
           });
         }
-    }
-  }
-
 
 
 // ---------------------
