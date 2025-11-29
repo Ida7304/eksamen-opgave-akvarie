@@ -240,8 +240,7 @@ body {
   max-width: fit-content;
   padding: 2vh;
   border-radius: 1rem;
-  border: 1.5px solid black;
-  top: 76.5vh;
+  top: 75vh;
   position: absolute;
   z-index: 13;
   left: 20vw;
@@ -287,7 +286,7 @@ body {
 .close-btn-am {
   position: absolute;
   left: 21vw;
-  top: 68vh;
+  top: 67vh;
   font-size: 20px;
   font-weight: bold;
   font-family: "Finger Paint", sans-serif;
