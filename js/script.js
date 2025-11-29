@@ -138,6 +138,7 @@ const fishInfo = [
     className: "fish1",
     name: "Klovnfisk",
     imgId: "klovnfisk-info",
+    realImgSrc: "img/billede-af-klovnfisk.png",
     gifSrc: "video/klovnfisk-talking.gif",
     imgStopSrc: "img/klovnfisk-closed-mouth.png",
     fishAudioSrc1: "audio/klovnfisk-speech-1.mp3",
@@ -150,6 +151,7 @@ const fishInfo = [
     className: "fish2",
     name: "Sandspiser-gobi",
     imgId: "sandspiser-info",
+    realImgSrc: "img/billede-af-sandspiser-gobi.png",
     gifSrc: "video/sandspiser-gobi-talking.gif",
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc1: "audio/sandspiser-gobi-speech-1.mp3",
@@ -162,6 +164,7 @@ const fishInfo = [
     className: "fish3",
     name: "Rævefjæs",
     imgId: "raevefisk-info",
+    realImgSrc: "img/billede-af-raevefjaes.png",
     gifSrc: "video/raevefjaes-talking.gif",
     imgStopSrc: "img/raevefjaes-closed-mouth.png",
     fishAudioSrc1: "audio/raevefjaes-speech-1.mp3",
@@ -174,6 +177,7 @@ const fishInfo = [
     className: "fish4",
     name: "Pindsvinefisk",
     imgId: "pindsvinefisk-info",
+    realImgSrc: "img/billede-af-pindsvinefisk.png",
     gifSrc: "video/pindsvinefisk-talking.gif",
     imgStopSrc: "img/pindsvinefisk-closed-mouth.png",
     fishAudioSrc1: "audio/pindsvinefisk-speech-1.mp3",
@@ -186,6 +190,7 @@ const fishInfo = [
     className: "fish5",
     name: "Pudsefisk",
     imgId: "pudsefisk-info",
+    realImgSrc: "img/billede-af-pudsefisk.png",
     gifSrc: "video/pudsefisk-talking.gif",
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc1: "audio/pudsefisk-speech-1.mp3",
@@ -198,6 +203,7 @@ const fishInfo = [
     className: "fish6",
     name: "Kirurgfisk",
     imgId: "kirurgfisk-info",
+    realImgSrc: "img/billede-af-kirurgfisk.png",
     gifSrc: "video/kirurgfisk-talking.gif",
     imgStopSrc: "img/kirurgfisk-closed-mouth.png",
     fishAudioSrc1: "audio/kirurgfisk-speech-1.mp3",
@@ -210,6 +216,7 @@ const fishInfo = [
     className: "fish7",
     name: "Blå Chromis",
     imgId: "blue-chromis-info",
+    realImgSrc: "img/billede-af-blue-chromis.png",
     gifSrc: "video/blue-chromis-talking.gif",
     imgStopSrc: "img/blue-chromis-closed-mouth.png",
     fishAudioSrc1: "audio/blue-chromis-speech-1.mp3",
@@ -293,6 +300,7 @@ const fishInfo = [
             tooltipContent.innerHTML = `
               <div class= "font-finger-paint">
                 <p>${activeFish.info2}</p>
+                <img src="${activeFish.realImgSrc}" class = "real-fish-img">
               </div>`;
 
           //Fjerner "lær mere"-knappen nå man har klikket på den

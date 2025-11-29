@@ -484,6 +484,12 @@ body {
   font-weight: bold;
 }
 
+.tooltip-content img {
+  height: auto;
+  width: 7vw;
+}
+
+
 .tooltip-content h3 {
   margin: 0 0 15px 0;
   font-size: 24px;
@@ -494,7 +500,7 @@ body {
   margin: 10px 0;
   line-height: 1.4;
   font-size: 14px;
-  color: #444;
+  color: black;
 }
 
 .close-btn {
@@ -581,4 +587,9 @@ body {
   top: 60vh;
   width: 30vw;
   left: 27vw;
+}
+
+
+.real-fish-img {
+  width: 10vw;
 }
