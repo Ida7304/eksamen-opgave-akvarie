@@ -1,10 +1,19 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
+
+// ---------
 // Variabler
+// ---------
+
 const akvarieMandenClosedImg = document.getElementById("akvariemanden-closed-mouth");
 const klikMigBtn = document.querySelector(".akvariemand-start-tekstboks");
 const akvariemandTaleBoks = document.querySelector(".akvariemand-slut-tekstboks");
 const lukBtnAm = document.querySelector(".close-btn-am");
+const tooltip = document.getElementById("tooltip");
+const tooltipContent = document.querySelector(".tooltip-content");
+const closeBtn = document.querySelector(".close-btn");
+const bubblesContainer = document.querySelector(".bubbles");
+const backgroundAudio = document.getElementById("underwater-sound");
 
 // Variabel til lyden der spiller når fiskene snakker
 // Vi bruger let så vi kan ændre dens værdi senere
@@ -25,24 +34,6 @@ akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
 // Akvariemandens funktion
 // -----------------------
 
-// Funktion til luk knappen ved akvariemandens tekstboks
-if(lukBtnAm) {
-  lukBtnAm.addEventListener("click", () => {
-    // Hvis lyden spiller, stopper den lyden og nulstiller tidspunktet så det starter forfra.
-    if (akvarieMandenSound) {
-      akvarieMandenSound.pause();
-      akvarieMandenSound.currentTime = 0;
-    }
-// Erstatter GIF'en med billedet af akvariemanden der ikke snakker
-    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
-// Gør klik på mig knappen synlig igen
-    klikMigBtn.classList.remove("is-not-visible");
-// Gør taleboksen usynlig
-    akvariemandTaleBoks.classList.remove("is-visible");
-// Gør luk knappen usynlig
-    lukBtnAm.classList.remove("visible");
-  });
-}
 
 // Afspiller snakke animation og lyd til akvariemanden når man klikker på ham
 if (akvarieMandenClosedImg) {
@@ -73,6 +64,32 @@ if (akvarieMandenClosedImg) {
   });
 }
 
+// Funktion til luk knappen ved akvariemandens tekstboks
+if(lukBtnAm) {
+  lukBtnAm.addEventListener("click", () => {
+    // Hvis lyden spiller, stopper den lyden og nulstiller tidspunktet så det starter forfra.
+    if (akvarieMandenSound) {
+      // Stopper lyden
+      akvarieMandenSound.pause();
+      // Resetter lydens tidlinje, så den starter forfra
+      akvarieMandenSound.currentTime = 0;
+    }
+
+// Erstatter GIF'en med billedet af akvariemanden der ikke snakker
+    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
+// Gør klik på mig knappen synlig igen
+    klikMigBtn.classList.remove("is-not-visible");
+// Gør taleboksen usynlig
+    akvariemandTaleBoks.classList.remove("is-visible");
+// Gør luk knappen usynlig
+    lukBtnAm.classList.remove("visible");
+  });
+}
+
+
+// -----------------------------------
+// Funktion til "Klik på mig!"-knappen
+// -----------------------------------
 
 // Samme funktioner som ovenstående bare tilføjet til "klik på mig" knappen så man kan
 // klikke på den eller akvariemanden for at få ham til at snakke
@@ -82,23 +99,20 @@ if (klikMigBtn) {
     akvarieMandenClosedImg.src = "video/akvariemand-talking.gif";
     akvarieMandenSound.play();
 
-    // Gør "klik på mig" knappen usynlig mens han snakker
     klikMigBtn.classList.add("is-not-visible");
 
-    // Gør akvariemandens taleboks synlig mens han snakker
     akvariemandTaleBoks.classList.add("is-visible");
 
-      lukBtnAm.classList.add("visible");
+    lukBtnAm.classList.add("visible");
 
-    // Stopper snakke animationen efter 16 sekunder
+
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
-      // Gør "klik på mig" knappen synlig når han er færdig med at snakke
+ 
       klikMigBtn.classList.remove("is-not-visible");
 
       lukBtnAm.classList.remove("visible");
 
-      // Gør akvariemandens taleboks usynlig når han er færdig med at snakke
       akvariemandTaleBoks.classList.remove("is-visible");
     }, 16000);
   });
@@ -108,8 +122,6 @@ if (klikMigBtn) {
 // ---------
 // Boblerne
 // ---------
-
-  const bubblesContainer = document.querySelector(".bubbles");
   for (let i = 0; i < 18; i++) {
     const bubble = document.createElement("div");
     bubble.className = "bubble";
@@ -129,8 +141,6 @@ if (klikMigBtn) {
 //------------------- 
 // Array til fiskene
 //-------------------
-
-/* anne-sofie har lavet javascript til tooltip */
 
 // HTML struktur for fiskenes talebobler
 const fishInfo = [
@@ -183,7 +193,7 @@ const fishInfo = [
     fishAudioSrc1: "audio/pindsvinefisk-speech-1.mp3",
     fishAudioSrc2: "audio/pindsvinefisk-speech-2.mp3",
     info1: "Hej du! Jeg er en Pindsvinefisk! <p>Hvis nogen prøver at fange mig, puster jeg mig op som en stor ballon med pigge</p>",
-    info2: "Jeg spiser snegle, små krabber og skaldyr. Mine tænder er så stærke, at jeg kan knuse skaller <p>Når jeg puster mig op, kan jeg blive 3 gange større end normalt!</p>"
+    info2: "Jeg spiser snegle, små krabber og skaldyr. <br> Mine tænder er så stærke, at jeg kan knuse skaller <p>Når jeg puster mig op, kan jeg blive 3 gange større end normalt!</p>"
   },
 
   {
@@ -231,46 +241,42 @@ const fishInfo = [
 // Tooltip funktion
 // ----------------
 
-  const tooltip = document.getElementById("tooltip");
-  const tooltipContent = document.querySelector(".tooltip-content");
-  const closeBtn = document.querySelector(".close-btn");
-
-  
   function showTooltip(fishData) {
     if (tooltip && tooltipContent) {
       activeFish = fishData;
       tooltipContent.innerHTML = `
       <div class= "font-finger-paint">
-        <h3>${fishData.name}</h3>
-        <p>${fishData.info1}</p>
+        <h3>${activeFish.name}</h3>
+        <p>${activeFish.info1}</p>
         </div>
       `;
       tooltip.classList.add("is-visible");
 
-      // Sørger fo at lær-mere-knappen er synlig hver gang man klikker på en ny fisk
+      // Sørger for at lær-mere-knappen er synlig hver gang man klikker på en ny fisk
       learnMoreBtn.style.display = "block";
 
       // Gør akvariemanden, fiskene og klik på mig knappen usynlig når man klikker på en fisk
-      document.querySelector(".akvariemanden").classList.add("klik-fisk-skjul");
-      document.querySelector(".akvariemand-start-tekstboks").classList.add("klik-fisk-skjul");
+      akvarieMandenClosedImg.classList.add("klik-fisk-skjul");
+      akvariemandTaleBoks.classList.add("klik-fisk-skjul");
+      klikMigBtn.classList.add("klik-fisk-skjul");
+      // Laver et loop der finder alle fiskene i ".fisk-container" klassen og skjuler dem
       document.querySelectorAll(".fisk-container img").forEach(img => {
         img.classList.add("klik-fisk-skjul");
       });
 
       // Henter fishImg fra array og viser kun det billede der tilhører den fisk der klikkes på
-      const fishImg = document.getElementById(fishData.imgId);
+      const fishImg = document.getElementById(activeFish.imgId);
       if (fishImg) {
         fishImg.style.opacity = 1;
-        fishImg.src = fishData.gifSrc;
+        fishImg.src = activeFish.gifSrc;
 
-        // Erstatter gif'en med billedet af fisken så den stopper med at snakke
-         setTimeout(() => {
-          fishImg.src = fishData.imgStopSrc;
-    }, 8500);
+        // // Erstatter gif'en med billedet af fisken så den stopper med at snakke
+        //  setTimeout(() => {
+        //   fishImg.src = fishData.imgStopSrc;
+        //    }, 8500);
 
       }
-      
-        if(fishData.fishAudioSrc1) {
+        if(activeFish.fishAudioSrc1) {
           if(fishSpeak) {
             // Pause gør at hvis man klikker på en anden fisk, før lyden er færdig med at spille,
             // pauser den den nuværende lyd og den nye afspilles.
@@ -279,7 +285,7 @@ const fishInfo = [
             fishSpeak.currentTime = 0;
           }
           // Henter lydfilen defineret i array
-          fishSpeak = new Audio(fishData.fishAudioSrc1);
+          fishSpeak = new Audio(activeFish.fishAudioSrc1);
           fishSpeak.play();
         }
     }
@@ -321,9 +327,12 @@ const fishInfo = [
               fishImg.src = activeFish.gifSrc;
 
               // Erstatter gif'en med billedet af fisken så den stopper med at snakke
-                setTimeout(() => {
-                 fishImg.src = activeFish.imgStopSrc;
-                }, 11000);
+                // setTimeout(() => {
+                //  fishImg.src = activeFish.imgStopSrc;
+                // }, 11000);
+                fishSpeak.onended = () => {
+          fishImg.src = activeFish.imgStopSrc;
+          };
               }
           });
         }
@@ -344,21 +353,22 @@ const fishInfo = [
   });
 
   // Gør fiskene, akvariemanden og klik på mig knappen synlig når tooltip lukkes
-    document.querySelector(".akvariemanden").classList.remove("klik-fisk-skjul");
-    document.querySelector(".akvariemand-start-tekstboks").classList.remove("klik-fisk-skjul");
+    akvarieMandenClosedImg.classList.remove("klik-fisk-skjul");
+    akvariemandTaleBoks.classList.remove("klik-fisk-skjul");
+    klikMigBtn.classList.remove("klik-fisk-skjul");
     document.querySelectorAll(".fisk-container img").forEach(img => {
         img.classList.remove("klik-fisk-skjul");
       });
 
   if(fishSpeak) {
-    // Pause stopper lyden
     fishSpeak.pause();
     // Rydder variablen fishSpeak, det signalerer at der ikke længere spilles en lyd
     // Det sørger for at vi kan bruge samme variabel til forskellige audio-filer
     fishSpeak = null;
-  }
+    }
   }
 
+  // Funktion til "Luk"-knappen i tooltip
   if (closeBtn) {
     closeBtn.addEventListener("click", hideTooltip);
   }
@@ -377,7 +387,6 @@ const fishInfo = [
 // ------------
 
 // Skrue ned for baggrundslyden
-const backgroundAudio = document.getElementById("underwater-sound");
 backgroundAudio.volume = 0.7;
 
 // Laver en variable til at starte baggrundslyden , da man ikke må bruge autoplay

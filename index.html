@@ -2,28 +2,36 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="akvarie skærm"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>akvarie</title>
+    <meta name="akvarie skærm" content="width=device-width, initial-scale=1.0"/>
+    <title>Akvarie</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Finger+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Finger+Paint&display=swap" rel="stylesheet">
   </head>
+
+
   <body>
+    <!-- -------- -->
     <!-- Baggrund -->
+    <!-- -------- -->
+     
     <section class="scene">
       <!-- <img src="img/animeret-baggrund.gif" alt="hav" class="bg"/> -->
       <!-- <video src="video/animeret-baggrund-video.mp4" loop autoplay class="bg"></video> -->
        <img src="video/animeret-baggrund-test.gif" alt="hav" class="bg">
+
       <div class="sun"></div>
 
+
+      <!-- ------ -->
       <!-- BOBLER -->
+      <!-- ------ -->
+
       <div class="bubbles">
+        <!-- <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -40,68 +48,51 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+        <div class="bubble"></div> -->
       </div>
 
-      <!-- Fisk animeret container -->
+
+      <!-- ------------------------ -->
+      <!-- Animerede fisk container -->
+      <!-- ------------------------ -->
       <div class="fisk-container">
-        <img
-          src="img/klovnfisk-closed-mouth.png"
-          alt="klovnfisk"
-          class="fish1"
-          id="klovnfisk"
-        />
 
-        <img
-          src="img/sandspiser-gobi-closed-mouth.png"
-          alt="sandspiser"
-          class="fish2"
-          id="sandspiser"
-        />
-        <img
-          src="img/raevefjaes-closed-mouth.png"
-          alt="rævefisk"
-          class="fish3"
-          id="raevefisk"
-        />
-        <img
-          src="img/pindsvinefisk-closed-mouth.png"
-          alt="pindsvinefisk"
-          class="fish4"
-          id="pindsvinefisk"
-        />
-        <img
-          src="img/pudsefisk-closed-mouth.png"
-          alt="pudsefisk"
-          class="fish5"
-          id="pudsefisk"
-        />
-        <img
-          src="img/kirurgfisk-closed-mouth.png"
-          alt="kirugfisk"
-          class="fish6"
-          id="kirugfisk"
-        />
-        <img
-          src="img/blue-chromis-closed-mouth.png"
-          alt="fisk1"
-          class="fish7"
-          id="blue-chromisfisk"
-        />
+        <!-- Klovnfisk -->
+        <img src="img/klovnfisk-closed-mouth.png" alt="klovnfisk" class="fish1" id="klovnfisk"/>
+
+        <!-- Sandspiser-gobi -->
+        <img src="img/sandspiser-gobi-closed-mouth.png" alt="sandspiser" class="fish2" id="sandspiser"/>
+
+        <!-- Rævefjæs -->
+        <img src="img/raevefjaes-closed-mouth.png" alt="rævefisk" class="fish3" id="raevefisk"/>
+
+        <!-- Pindsvinefisk -->
+        <img src="img/pindsvinefisk-closed-mouth.png" alt="pindsvinefisk" class="fish4" id="pindsvinefisk"/>
+
+        <!-- Pudsefisk -->
+        <img src="img/pudsefisk-closed-mouth.png" alt="pudsefisk" class="fish5" id="pudsefisk"/>
+
+        <!-- Kirurgfisk -->
+        <img src="img/kirurgfisk-closed-mouth.png" alt="kirurgfisk" class="fish6" id="kirurgfisk"/>
+
+        <!-- Blå Chromis -->
+        <img src="img/blue-chromis-closed-mouth.png" alt="fisk1" class="fish7" id="blue-chromisfisk"/>
       </div>
+
+
+      <!-- ----------------------- -->
       <!-- Akvariemanden container -->
-      <div class="akvariemanden">
-        <figure class="akvariemanden-closed-mouth">
+      <!-- ----------------------- -->
+        <figure class="akvariemanden">
           <img src="img/akvariemanden-closed-mouth.png" alt="akvariemanden med lukket mund" id="akvariemanden-closed-mouth"/>
         </figure>
-      </div>
+    
 
       <!-- Akvariemanden tekstbokse -->
       <div class="akvariemand-start-tekstboks">
         <p id="start-tekstboks">Klik på mig!</p>
       </div>
-      <button class="close-btn-am">Luk</button>
+
       <div class="akvariemand-slut-tekstboks">
         <p id="slut-tekstboks">
           Hej med jer!
@@ -112,15 +103,23 @@
         </p>
       </div>
 
+      <!-- Luk-knap til akvariemandens tekstboks -->
+      <button class="close-btn-am">Luk</button>
 
+
+      <!-- ---------------------------- -->
       <!-- Tooltip container og knapper -->
+      <!-- ---------------------------- -->
       <div id="tooltip" class="tooltip">
         <button class="close-btn">Luk</button>
         <button class="learn-more-btn">Lær mere!</button>
         <div class="tooltip-content"></div>
       </div>
 
+
+      <!-- ------------------------------------ -->
       <!-- Fisk til informationsskærm container -->
+      <!-- ------------------------------------ -->
       <div class="info-fish">
         <img src="video/klovnfisk-talking.gif" alt="klovnfisk" id="klovnfisk-info" />
         <img src="video/sandspiser-gobi-talking.gif" alt="sandspiser-gobi" id="sandspiser-info" />
@@ -132,6 +131,7 @@
       </div>
     </section>
 
+    <!-- Baggrundslyd -->
     <audio src="audio/underwater-loop.mp3" loop id="underwater-sound"></audio>
 
     <script src="js/script.js"></script>
