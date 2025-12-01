@@ -483,8 +483,8 @@ body {
 
 .tooltip {
   position: fixed;
-  top: 42%;
-  left: 65%;
+  top: 42vh;
+  left: 65vw;
   transform: translate(-50%, -50%);
   background-image: url("../img/tekstbobbel.png");
   background-size: contain;
@@ -509,12 +509,12 @@ body {
   visibility: visible;
 }
 
-
-.tooltip-content img {
+.tooltip-content img{
+  flex-shrink: 0;
   height: auto;
   width: 7vw;
+  align-self: flex-start;
 }
-
 
 .tooltip-content h3 {
   margin: 0 0 15px 0;
