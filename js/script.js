@@ -48,7 +48,7 @@ if(lukBtnAm) {
 // Erstatter GIF'en med billedet af akvariemanden der ikke snakker
     akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
 // Gør klik på mig knappen synlig igen
-    klikMigBtn.classList.remove("is-not-visible");
+    klikMigBtn.style.display = "block";
 // Gør taleboksen usynlig
     akvariemandTaleBoks.classList.remove("is-visible");
 // Gør luk knappen usynlig
@@ -64,7 +64,7 @@ if (akvarieMandenClosedImg) {
     akvarieMandenSound.play();
 
     // Gør "klik på mig" knappen usynlig mens han snakker
-    klikMigBtn.classList.add("is-not-visible");
+    klikMigBtn.style.display = "none";
 
     // Gør akvariemandens taleboks synlig mens han snakker
     akvariemandTaleBoks.classList.add("is-visible");
@@ -75,7 +75,7 @@ if (akvarieMandenClosedImg) {
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
       // Gør "klik på mig" knappen synlig når han er færdig med at snakke
-      klikMigBtn.classList.remove("is-not-visible");
+      klikMigBtn.style.display = "block";
 
       // Gør akvariemandens taleboks usynlig når han er færdig med at snakke
       akvariemandTaleBoks.classList.remove("is-visible");
@@ -100,7 +100,7 @@ if (klikMigBtn) {
     akvarieMandenClosedImg.src = "video/akvariemand-talking.gif";
     akvarieMandenSound.play();
 
-    klikMigBtn.classList.add("is-not-visible");
+    klikMigBtn.style.display = "none";
 
     akvariemandTaleBoks.classList.add("is-visible");
 
@@ -110,7 +110,7 @@ if (klikMigBtn) {
     setTimeout(() => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
  
-      klikMigBtn.classList.remove("is-not-visible");
+      klikMigBtn.style.display = "block";
 
       lukBtnAm.classList.remove("visible");
 
@@ -267,12 +267,11 @@ const fishInfo = [
       learnMoreBtn.style.display = "block";
 
       // Gør akvariemanden, fiskene og klik på mig knappen usynlig når man klikker på en fisk
-      akvarieMandenClosedImg.classList.add("klik-fisk-skjul");
-      akvariemandTaleBoks.classList.add("klik-fisk-skjul");
-      klikMigBtn.classList.add("is-not-visible");
+      akvarieMandenClosedImg.style.display = "none";
+      klikMigBtn.style.display = "none";
       // Laver et loop der finder alle fiskene i ".fisk-container" klassen og skjuler dem
       document.querySelectorAll(".fisk-container img").forEach(img => {
-        img.classList.add("klik-fisk-skjul");
+        img.style.display = "none";
       });
 
 
@@ -281,13 +280,8 @@ const fishInfo = [
       if (fishImg) {
         fishImg.style.opacity = 1;
         fishImg.src = activeFish.gifSrc;
+      };
 
-        // Erstatter gif'en med billedet af fisken så den stopper med at snakke
-        //  setTimeout(() => {
-        //   fishImg.src = fishData.imgStopSrc;
-        //    }, 8500);
-
-      }
         if(activeFish.fishAudioSrc1) {
           if(fishSpeak) {
             // Pause gør at hvis man klikker på en anden fisk, før lyden er færdig med at spille,
@@ -308,7 +302,7 @@ const fishInfo = [
           };
 
           fishSpeak.play();
-          
+
           const fishImg = document.getElementById(activeFish.imgId);
           // Afspiller automatisk GIF'en når lyden afspilles
           if(fishSpeak) {
@@ -385,14 +379,13 @@ const fishInfo = [
   });
 
   // Gør fiskene, akvariemanden og klik på mig knappen synlig når tooltip lukkes
-    akvarieMandenClosedImg.classList.remove("klik-fisk-skjul");
-    akvariemandTaleBoks.classList.remove("klik-fisk-skjul");
-    klikMigBtn.classList.remove("is-not-visible");
+    akvarieMandenClosedImg.style.display = "block";
+    klikMigBtn.style.display = "block";
     // Sikrer at hvis man har afbrudt ham mens han snakker og lukker tooltip før han er færdig,
     // vil hans snakke animation ikke være den der spiller
     akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
     document.querySelectorAll(".fisk-container img").forEach(img => {
-        img.classList.remove("klik-fisk-skjul");
+        img.style.display = "block";
       });
 
   if(fishSpeak) {

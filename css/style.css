@@ -274,10 +274,6 @@ body {
 /* "Klik på mig!" -knap */
 /* -------------------- */
 
-/* Laver en klasse der gør "klik på mig" knappen usynlig */
-.akvariemand-start-tekstboks.is-not-visible {
-  opacity: 0;
-}
 
 /* Animation til "klik på mig" knappen */
 @keyframes pulse {
