@@ -298,7 +298,23 @@ const fishInfo = [
           }
           // Henter lydfilen defineret i array
           fishSpeak = new Audio(activeFish.fishAudioSrc1);
+
+          // Viser stil-billedet når lyd-filen stopper (onended)
+          fishSpeak.onended = () => {
+            const fishImg = document.getElementById(activeFish.imgId);
+            if (fishImg) {
+              fishImg.src = activeFish.imgStopSrc;
+            }
+          };
+
           fishSpeak.play();
+          
+          const fishImg = document.getElementById(activeFish.imgId);
+          // Afspiller automatisk GIF'en når lyden afspilles
+          if(fishSpeak) {
+            fishImg.src = activeFish.gifSrc;
+          }
+
         }
     }
   }
@@ -329,23 +345,27 @@ const fishInfo = [
             fishSpeak.pause();
             fishSpeak.currentTime = 0;
             fishSpeak = new Audio (activeFish.fishAudioSrc2);
+
+            fishSpeak.onended = () => {
+              const fishImg = document.getElementById(activeFish.imgId)
+              if(fishImg) {
+                fishImg.src = activeFish.imgStopSrc;
+              }
+            };
+
             fishSpeak.play();
-          }
+            const fishImg = document.getElementById(activeFish.imgId);
+            if(fishImg) {
+              fishImg.src = activeFish.gifSrc;
+            };
+          };
 
           // Sikrer at det kun er billedet tilhørende den fisk der er klikket på der vises
           const fishImg = document.getElementById(activeFish.imgId);
              if (fishImg) {
               fishImg.style.opacity = 1;
               fishImg.src = activeFish.gifSrc;
-
-              // Erstatter gif'en med billedet af fisken så den stopper med at snakke
-                // setTimeout(() => {
-                //  fishImg.src = activeFish.imgStopSrc;
-                // }, 11000);
-                fishSpeak.onended = () => {
-          fishImg.src = activeFish.imgStopSrc;
-          };
-              }
+              };
           });
         }
 
