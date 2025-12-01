@@ -33,6 +33,28 @@ akvarieMandenSound.src = "audio/akvariemand-introduktion-audio.mp3";
 // -----------------------
 // Akvariemandens funktion
 // -----------------------
+// Funktion til luk knappen ved akvariemandens tekstboks
+
+if(lukBtnAm) {
+  lukBtnAm.addEventListener("click", () => {
+    // Hvis lyden spiller, stopper den lyden og nulstiller tidspunktet så det starter forfra.
+    if (akvarieMandenSound) {
+      // Stopper lyden
+      akvarieMandenSound.pause();
+      // Resetter lydens tidlinje, så den starter forfra
+      akvarieMandenSound.currentTime = 0;
+    }
+
+// Erstatter GIF'en med billedet af akvariemanden der ikke snakker
+    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
+// Gør klik på mig knappen synlig igen
+    klikMigBtn.classList.remove("is-not-visible");
+// Gør taleboksen usynlig
+    akvariemandTaleBoks.classList.remove("is-visible");
+// Gør luk knappen usynlig
+    lukBtnAm.classList.remove("visible");
+  });
+}
 
 
 // Afspiller snakke animation og lyd til akvariemanden når man klikker på ham
@@ -64,27 +86,6 @@ if (akvarieMandenClosedImg) {
   });
 }
 
-// Funktion til luk knappen ved akvariemandens tekstboks
-if(lukBtnAm) {
-  lukBtnAm.addEventListener("click", () => {
-    // Hvis lyden spiller, stopper den lyden og nulstiller tidspunktet så det starter forfra.
-    if (akvarieMandenSound) {
-      // Stopper lyden
-      akvarieMandenSound.pause();
-      // Resetter lydens tidlinje, så den starter forfra
-      akvarieMandenSound.currentTime = 0;
-    }
-
-// Erstatter GIF'en med billedet af akvariemanden der ikke snakker
-    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
-// Gør klik på mig knappen synlig igen
-    klikMigBtn.classList.remove("is-not-visible");
-// Gør taleboksen usynlig
-    akvariemandTaleBoks.classList.remove("is-visible");
-// Gør luk knappen usynlig
-    lukBtnAm.classList.remove("visible");
-  });
-}
 
 
 // -----------------------------------
@@ -242,6 +243,16 @@ const fishInfo = [
 // ----------------
 
   function showTooltip(fishData) {
+
+    // Stopper akvariemandens lydfil, hvis den kører
+    if (akvarieMandenSound) {
+      akvarieMandenSound.pause();
+      akvarieMandenSound.currentTime = 0;
+      akvariemandTaleBoks.classList.remove("is-visible");
+      lukBtnAm.classList.remove("visible");
+    }
+
+
     if (tooltip && tooltipContent) {
       activeFish = fishData;
       tooltipContent.innerHTML = `
@@ -258,11 +269,12 @@ const fishInfo = [
       // Gør akvariemanden, fiskene og klik på mig knappen usynlig når man klikker på en fisk
       akvarieMandenClosedImg.classList.add("klik-fisk-skjul");
       akvariemandTaleBoks.classList.add("klik-fisk-skjul");
-      klikMigBtn.classList.add("klik-fisk-skjul");
+      klikMigBtn.classList.add("is-not-visible");
       // Laver et loop der finder alle fiskene i ".fisk-container" klassen og skjuler dem
       document.querySelectorAll(".fisk-container img").forEach(img => {
         img.classList.add("klik-fisk-skjul");
       });
+
 
       // Henter fishImg fra array og viser kun det billede der tilhører den fisk der klikkes på
       const fishImg = document.getElementById(activeFish.imgId);
@@ -270,7 +282,7 @@ const fishInfo = [
         fishImg.style.opacity = 1;
         fishImg.src = activeFish.gifSrc;
 
-        // // Erstatter gif'en med billedet af fisken så den stopper med at snakke
+        // Erstatter gif'en med billedet af fisken så den stopper med at snakke
         //  setTimeout(() => {
         //   fishImg.src = fishData.imgStopSrc;
         //    }, 8500);
@@ -355,7 +367,10 @@ const fishInfo = [
   // Gør fiskene, akvariemanden og klik på mig knappen synlig når tooltip lukkes
     akvarieMandenClosedImg.classList.remove("klik-fisk-skjul");
     akvariemandTaleBoks.classList.remove("klik-fisk-skjul");
-    klikMigBtn.classList.remove("klik-fisk-skjul");
+    klikMigBtn.classList.remove("is-not-visible");
+    // Sikrer at hvis man har afbrudt ham mens han snakker og lukker tooltip før han er færdig,
+    // vil hans snakke animation ikke være den der spiller
+    akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
     document.querySelectorAll(".fisk-container img").forEach(img => {
         img.classList.remove("klik-fisk-skjul");
       });
