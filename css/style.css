@@ -3,6 +3,10 @@
   --fish-small-w: 14vw;
   --fish-medium-w: 17vw;
   --fish-big-w: 23vw;
+  --luk-border: rgb(211, 38, 15);
+  --luk-bg:rgb(240, 123, 105);
+  --knap-border:rgb(211, 83, 15);
+  --knap-bg:  rgb(245, 203, 32);
 }
 
 .font-finger-paint {
@@ -243,8 +247,8 @@ body {
 
 /* Akvariemandens tekstbokse */
 .akvariemand-start-tekstboks {
-  border: 1.5px solid rgb(211, 83, 15);
-  background-color: rgb(245, 203, 32);
+  border: 1.5px solid var(--knap-border);
+  background-color:var(--knap-bg);
   max-width: fit-content;
   padding: 2vh;
   border-radius: 1rem;
@@ -264,7 +268,7 @@ body {
   top: 75vh;
   position: absolute;
   z-index: 13;
-  left: 20vw;
+  left: 22vw;
   font-family: "Finger Paint", sans-serif;
   opacity: 0;
 }
@@ -302,13 +306,13 @@ body {
 /* ---------------------------- */
 .close-btn-am {
   position: absolute;
-  left: 21vw;
+  left: 23vw;
   top: 67vh;
   font-size: 20px;
   font-weight: bold;
   font-family: "Finger Paint", sans-serif;
-  border: 1.5px solid rgb(211, 38, 15);
-  background-color: rgb(240, 123, 105);
+  border: 1.5px solid var(--luk-border);
+  background-color: var(--luk-bg);
   padding: 1vh;
   border-radius: 0.5rem;  
   opacity: 0;
@@ -544,8 +548,8 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-family: "Finger Paint", sans-serif;
-  border: 1.5px solid rgb(211, 38, 15);
-  background-color: rgb(240, 123, 105);
+  border: 1.5px solid var(--luk-border);
+  background-color: var(--luk-bg);
   padding: 1vh;
   border-radius: 0.5rem;  
 }
@@ -559,8 +563,8 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-family: "Finger Paint", sans-serif;
-  border: 1.5px solid rgb(211, 83, 15);
-  background-color: rgb(245, 203, 32);
+  border: 1.5px solid var(--knap-border);
+  background-color: var(--knap-bg);
   padding: 1vh;
   border-radius: 0.5rem; 
 }
