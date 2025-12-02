@@ -11,6 +11,11 @@
   font-style: normal;
 }
 
+.display-style {
+  display: flex;
+  gap: 1vw;
+}
+
 
 /* Reset style */
 * {
@@ -561,7 +566,7 @@ body {
 
 /* Styling af det realistiske billede i tooltip */
 .real-fish-img {
-  width: 10vw;
+  margin-top: 4vh;
 }
 
 

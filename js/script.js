@@ -155,7 +155,7 @@ const fishInfo = [
     fishAudioSrc1: "audio/klovnfisk-speech-1.mp3",
     fishAudioSrc2: "audio/klovnfisk-speech-2.mp3",
     info1: "Hej! Jeg er en Klovnfisk <p>Jeg gemmer mig i søanemoner som beskytter mig med sine giftige arme - men den stikker ikke mig, for vi er bedste venner</p>",
-    info2: "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem <p>Vi bliver alle sammen født som hanner! Hvis en hun dør, skifter hannen køn og bliver til en hun!</p>"
+    info2: "Jeg spiser små rejer, plankton og madrester, der flyder forbi mit hjem <p>Vi bliver alle sammen født som hanner! <br> Hvis en hun dør, skifter hannen køn og bliver til en hun!</p>"
   },
 
   {
@@ -326,8 +326,8 @@ const fishInfo = [
           learnMoreBtn.addEventListener("click", () => {
           // Finder info2 i arrayet og viser kun den ved klik på knappen
             tooltipContent.innerHTML = `
-              <div class= "font-finger-paint">
-                <p>${activeFish.info2}</p>
+              <div class= "font-finger-paint display-style">
+                <div><p>${activeFish.info2}</p></div>
                 <img src="${activeFish.realImgSrc}" class = "real-fish-img">
               </div>`;
 
