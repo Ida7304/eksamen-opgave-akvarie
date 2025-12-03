@@ -14,6 +14,8 @@ const tooltipContent = document.querySelector(".tooltip-content");
 const closeBtn = document.querySelector(".close-btn");
 const bubblesContainer = document.querySelector(".bubbles");
 const backgroundAudio = document.getElementById("underwater-sound");
+const learnMoreBtn = document.querySelector(".learn-more-btn");
+
 
 // Variabel til lyden der spiller når fiskene snakker
 // Vi bruger let så vi kan ændre dens værdi senere
@@ -123,18 +125,26 @@ if (klikMigBtn) {
 // ---------
 // Boblerne
 // ---------
+
+// Laver et loop som kører 18 gange (antallet af bobler) i++, lægger 1 til i indtil den når 17
   for (let i = 0; i < 18; i++) {
+    // Laver en ny div til boblerne
     const bubble = document.createElement("div");
+    // Giver den nye div en CSS klasse med navnet "bubble"
     bubble.className = "bubble";
 
     // Generer en tilfældig position for boblen horisontalt
+    // Math.random() giver et tilfældigt tal mellem 0 og 1, som derefter ganges med 100
     const randomLeft = Math.random() * 100; // 0 til 100%
+
+    // Tager tallet udregnet i randomLeft og bruger det som boblens horisontale position
     bubble.style.left = `${randomLeft}vw`; // Sæt venstre position i vw
 
     // Generer en tilfældig startposition vertikalt
     const randomBottom = Math.random() * 80; // 0 til 80vh
     bubble.style.bottom = `${randomBottom}vh`; // Sæt bundt position i vh
 
+    // Tilføjer den nye boble som et barn til elementet "bubblesContainer" som findes i HTML
     bubblesContainer.appendChild(bubble);
   };
 
@@ -320,8 +330,6 @@ const fishInfo = [
 // -------------
 
    // Funktion til "lær mere" knappen
-        const learnMoreBtn = document.querySelector(".learn-more-btn");
-
         if(learnMoreBtn) {
           learnMoreBtn.addEventListener("click", () => {
           // Finder info2 i arrayet og viser kun den ved klik på knappen

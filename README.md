@@ -1,20 +1,15 @@
 
-<!-- Her er beskrevet hvem der har lavet hvad i CSS, HTML og JS -->
+Jeg har rettet i JS, CSS og HTML
 
 HTML
-<!-- Div klasserne med "akvariemanden", tekstboks  og info-fish- IDA -->
-<!-- Div klasserne med "boblerne" - MARIA -->
-<!-- Opsætning af fiskene og tooltip - ANNE-SOFIE -->
-<!-- Indsætning af lyd og redigering af div fisk animation - JEPPE -->
+Her har jeg fjernet unødvendigt kode (kode som ikke blev brugt), indsat nye knapper og optimeret opsætningen.
+
 
 CSS
-<!-- Styling af akvariemanden, hans tekstbokse og de fisk der dukker op når taleboblerne er synlige  - IDA-->
-<!-- Styling og animation af boblerne - MARIA -->
-<!-- Keyframe animation af fisk og styling af tooltip - ANNE-SOFIE -->
-<!-- Start og slut positioner, samt at få fisk til at svømme fra højre til venstre - JEPPE -->
+Igen fjernet kode der ikke blev brugt, lavet variabler, stylet nye objekter og rettet units.
+
 
 JS
-<!-- Animation og lyd til akvariemanden og lyd til når fiskene snakker - IDA -->
-<!-- Animation til Boblerne - MARIA -->
-<!-- Opsætning og funktion af tooltip og array og click-events til fiskene - ANNE-SOFIE -->
-<!-- Funktion til "klik-på-mig"-knap - JEPPE -->
+Her har jeg primært lavet en ekstra funktion til tooltip, indsat mere information, rettet timing til lyd og gif
+og optimeret opsætningen.
+

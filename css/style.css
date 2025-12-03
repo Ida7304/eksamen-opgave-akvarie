@@ -56,13 +56,6 @@ body {
 }
 
 
-/* Klasse til at skjule akvariemanden og de svømmende fisk
-  når man klikker på en fisk */
-.klik-fisk-skjul {
-  opacity: 0;
-}
-
-
 /* ---- */
 /* Fisk */
 /* ---- */
