@@ -73,18 +73,17 @@ if (akvarieMandenClosedImg) {
 
        lukBtnAm.classList.add("visible");
 
-    // Stopper snakke animationen efter 16 sekunder
-    setTimeout(() => {
+
+    // Stopper animation, fjerner tekstboks og "luk"-knap og viser "klik på mig"-knappen, ved afslutning af lydfil
+    akvarieMandenSound.onended = () => {
       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
-      // Gør "klik på mig" knappen synlig når han er færdig med at snakke
+ 
       klikMigBtn.style.display = "block";
 
-      // Gør akvariemandens taleboks usynlig når han er færdig med at snakke
+      lukBtnAm.classList.remove("visible");
+
       akvariemandTaleBoks.classList.remove("is-visible");
-
-         lukBtnAm.classList.remove("visible");
-
-    }, 16000);
+    };
   });
 }
 
@@ -107,17 +106,17 @@ if (klikMigBtn) {
     akvariemandTaleBoks.classList.add("is-visible");
 
     lukBtnAm.classList.add("visible");
+    
 
-
-    setTimeout(() => {
-      akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
+    akvarieMandenSound.onended = () => {
+       akvarieMandenClosedImg.src = "img/akvariemanden-closed-mouth.png";
  
       klikMigBtn.style.display = "block";
 
       lukBtnAm.classList.remove("visible");
 
       akvariemandTaleBoks.classList.remove("is-visible");
-    }, 16000);
+    };
   });
 }
 
