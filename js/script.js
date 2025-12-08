@@ -408,9 +408,16 @@ const fishInfo = [
     closeBtn.addEventListener("click", hideTooltip);
   }
 
+  // Finder elementerne kaldet "fish" i tooltip
   fishInfo.forEach((fish) => {
+
+    // Finder CSS-klasser i HTML-elementerne der matcher className
+    // Det giver en liste kører funktionens indhold for hvert enkelte element
     document.querySelectorAll("." + fish.className).forEach((elem) => {
+
+      // Tilføjer en klik-event til alle elementerne
       elem.addEventListener("click", (e) => {
+        // Kalder på "showTooltip" funktionen
         showTooltip(fish);
       });
     });

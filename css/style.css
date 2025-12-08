@@ -9,15 +9,11 @@
   --knap-bg:  rgb(245, 203, 32);
 }
 
+/* Klasse til font */
 .font-finger-paint {
   font-family: "Finger Paint", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.display-style {
-  display: flex;
-  gap: 1vw;
 }
 
 
@@ -532,13 +528,18 @@ body {
   color: black;
 }
 
+/* Display style til tooltip */
+.display-style {
+  display: flex;
+  gap: 1vw;
+}
+
 /* "Luk"-knap til tooltip */
 .close-btn {
   position: absolute;
   top: 58vh;
   right: 17vw;
   font-size: 24px;
-  cursor: pointer;
   font-weight: bold;
   font-family: "Finger Paint", sans-serif;
   border: 1.5px solid var(--luk-border);
