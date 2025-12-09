@@ -125,7 +125,8 @@ if (klikMigBtn) {
 // Boblerne
 // ---------
 
-// Laver et loop som kører 18 gange (antallet af bobler) i++, lægger 1 til i indtil den når 17
+// Laver et loop som kører 18 gange (antallet af bobler)
+// "i++" øges med 1 hver gang indtil den ikke længere er < 18.
   for (let i = 0; i < 18; i++) {
     // Laver en ny div til boblerne
     const bubble = document.createElement("div");
@@ -134,7 +135,8 @@ if (klikMigBtn) {
 
     // Generer en tilfældig position for boblen horisontalt
     // Math.random() giver et tilfældigt tal mellem 0 og 1, som derefter ganges med 100
-    const randomLeft = Math.random() * 100; // 0 til 100%
+    // Det giver et tal mellem 0-100 som bruges senere
+    const randomLeft = Math.random() * 100;
 
     // Tager tallet udregnet i randomLeft og bruger det som boblens horisontale position
     bubble.style.left = `${randomLeft}vw`; // Sæt venstre position i vw
@@ -316,11 +318,11 @@ const fishInfo = [
           // Afspiller automatisk GIF'en når lyden afspilles
           if(fishSpeak) {
             fishImg.src = activeFish.gifSrc;
-          }
+          };
 
-        }
-    }
-  }
+        };
+    };
+  };
 
 
 
