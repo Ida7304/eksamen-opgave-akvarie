@@ -171,7 +171,7 @@ const fishInfo = [
     className: "fish2",
     name: "Sandspiser-gobi",
     imgId: "sandspiser-info",
-    realImgSrc: "img/billede-af-sandspiser-gobi.png",
+    // Her skulle være et billede, men kunne ikke finde et gratis et at bruge
     gifSrc: "video/sandspiser-gobi-talking.gif",
     imgStopSrc: "img/sandspiser-gobi-closed-mouth.png",
     fishAudioSrc1: "audio/sandspiser-gobi-speech-1.mp3",
@@ -210,7 +210,7 @@ const fishInfo = [
     className: "fish5",
     name: "Pudsefisk",
     imgId: "pudsefisk-info",
-    realImgSrc: "img/billede-af-pudsefisk.png",
+    // Her skulle være et billede, men kunne ikke finde et gratis et at bruge
     gifSrc: "video/pudsefisk-talking.gif",
     imgStopSrc: "img/pudsefisk-closed-mouth.png",
     fishAudioSrc1: "audio/pudsefisk-speech-1.mp3",
