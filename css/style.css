@@ -235,7 +235,7 @@ body {
 
 
 /* Akvariemandens tekstbokse */
-.akvariemand-start-tekstboks {
+#start-tekstboks {
   border: 1.5px solid var(--knap-border);
   background-color:var(--knap-bg);
   max-width: fit-content;
@@ -244,7 +244,7 @@ body {
   position: absolute;
   top: 90vh;
   z-index: 12;
-  left: 5.4vw;
+  left: 5.9vw;
   font-family: "Finger Paint", sans-serif;
   animation: pulse 2.5s infinite;
 }
